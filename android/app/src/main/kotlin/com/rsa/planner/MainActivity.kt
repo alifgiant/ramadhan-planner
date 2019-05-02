@@ -1,4 +1,4 @@
-package com.huextrat.taskist
+package com.rsa.planner
 
 import android.os.Bundle
 

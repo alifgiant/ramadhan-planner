@@ -5,6 +5,7 @@ import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:taskist/model/element.dart';
 import 'package:taskist/ui/page_detail.dart';
+import 'dart:math' as math;
 
 import 'page_addlist.dart';
 
@@ -23,6 +24,25 @@ class _TaskPageState extends State<TaskPage>
 
   @override
   Widget build(BuildContext context) {
+    
+    Firestore.instance.collection(widget.user.uid).snapshots().first.then((snapShot){
+      if ( snapShot.documents.isEmpty ){
+        print("DEFAULT EMPTY");
+      } else {
+        print("DEFAULT EXIST");
+      }
+
+      Firestore.instance.collection("base").getDocuments().then((defaultSnapShot){
+        WriteBatch batch = Firestore.instance.batch();
+        var userCollection = Firestore.instance.collection(widget.user.uid);
+        defaultSnapShot.documents.forEach((doc){
+          var docToCreate = userCollection.document(doc.documentID);
+          batch.setData(docToCreate, doc.data);
+        });
+        batch.commit();
+      });
+    });
+
     return Scaffold(
       body: ListView(
         children: <Widget>[
@@ -107,7 +127,7 @@ class _TaskPageState extends State<TaskPage>
                 child: new StreamBuilder<QuerySnapshot>(
                     stream: Firestore.instance
                         .collection(widget.user.uid)
-                        .orderBy("date", descending: true)
+                        .orderBy("date", descending: false)
                         .snapshots(),
                     builder: (BuildContext context,
                         AsyncSnapshot<QuerySnapshot> snapshot) {
