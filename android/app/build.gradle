@@ -41,7 +41,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.rsa.khatam"
+        applicationId "com.rsa.khatam_quran"
         minSdkVersion 16
         targetSdkVersion 28
         versionCode flutterVersionCode.toInteger()

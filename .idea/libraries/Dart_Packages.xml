@@ -373,6 +373,13 @@
             </list>
           </value>
         </entry>
+        <entry key="pedantic">
+          <value>
+            <list>
+              <option value="D:/flutter/.pub-cache/hosted/pub.dartlang.org/pedantic-1.4.0/lib" />
+            </list>
+          </value>
+        </entry>
         <entry key="petitparser">
           <value>
             <list>
@@ -460,7 +467,7 @@
         <entry key="source_span">
           <value>
             <list>
-              <option value="D:/flutter/.pub-cache/hosted/pub.dartlang.org/source_span-1.4.1/lib" />
+              <option value="D:/flutter/.pub-cache/hosted/pub.dartlang.org/source_span-1.5.4/lib" />
             </list>
           </value>
         </entry>
@@ -509,14 +516,14 @@
         <entry key="term_glyph">
           <value>
             <list>
-              <option value="D:/flutter/.pub-cache/hosted/pub.dartlang.org/term_glyph-1.0.1/lib" />
+              <option value="D:/flutter/.pub-cache/hosted/pub.dartlang.org/term_glyph-1.1.0/lib" />
             </list>
           </value>
         </entry>
         <entry key="test_api">
           <value>
             <list>
-              <option value="D:/flutter/.pub-cache/hosted/pub.dartlang.org/test_api-0.2.1/lib" />
+              <option value="D:/flutter/.pub-cache/hosted/pub.dartlang.org/test_api-0.2.2/lib" />
             </list>
           </value>
         </entry>
@@ -636,6 +643,7 @@
       <root url="file://D:/flutter/.pub-cache/hosted/pub.dartlang.org/package_config-1.0.5/lib" />
       <root url="file://D:/flutter/.pub-cache/hosted/pub.dartlang.org/path-1.6.2/lib" />
       <root url="file://D:/flutter/.pub-cache/hosted/pub.dartlang.org/path_provider-0.4.1/lib" />
+      <root url="file://D:/flutter/.pub-cache/hosted/pub.dartlang.org/pedantic-1.4.0/lib" />
       <root url="file://D:/flutter/.pub-cache/hosted/pub.dartlang.org/petitparser-2.1.1/lib" />
       <root url="file://D:/flutter/.pub-cache/hosted/pub.dartlang.org/platform-2.2.0/lib" />
       <root url="file://D:/flutter/.pub-cache/hosted/pub.dartlang.org/pointycastle-1.0.1/lib" />
@@ -647,15 +655,15 @@
       <root url="file://D:/flutter/.pub-cache/hosted/pub.dartlang.org/share-0.6.1/lib" />
       <root url="file://D:/flutter/.pub-cache/hosted/pub.dartlang.org/shared_preferences-0.4.3/lib" />
       <root url="file://D:/flutter/.pub-cache/hosted/pub.dartlang.org/shimmer-1.0.0/lib" />
-      <root url="file://D:/flutter/.pub-cache/hosted/pub.dartlang.org/source_span-1.4.1/lib" />
+      <root url="file://D:/flutter/.pub-cache/hosted/pub.dartlang.org/source_span-1.5.4/lib" />
       <root url="file://D:/flutter/.pub-cache/hosted/pub.dartlang.org/sqflite-1.1.1/lib" />
       <root url="file://D:/flutter/.pub-cache/hosted/pub.dartlang.org/stack_trace-1.9.3/lib" />
       <root url="file://D:/flutter/.pub-cache/hosted/pub.dartlang.org/sticky_headers-0.1.7/lib" />
       <root url="file://D:/flutter/.pub-cache/hosted/pub.dartlang.org/stream_channel-1.6.8/lib" />
       <root url="file://D:/flutter/.pub-cache/hosted/pub.dartlang.org/string_scanner-1.0.4/lib" />
       <root url="file://D:/flutter/.pub-cache/hosted/pub.dartlang.org/synchronized-2.1.0/lib" />
-      <root url="file://D:/flutter/.pub-cache/hosted/pub.dartlang.org/term_glyph-1.0.1/lib" />
-      <root url="file://D:/flutter/.pub-cache/hosted/pub.dartlang.org/test_api-0.2.1/lib" />
+      <root url="file://D:/flutter/.pub-cache/hosted/pub.dartlang.org/term_glyph-1.1.0/lib" />
+      <root url="file://D:/flutter/.pub-cache/hosted/pub.dartlang.org/test_api-0.2.2/lib" />
       <root url="file://D:/flutter/.pub-cache/hosted/pub.dartlang.org/tuple-1.0.2/lib" />
       <root url="file://D:/flutter/.pub-cache/hosted/pub.dartlang.org/typed_data-1.1.6/lib" />
       <root url="file://D:/flutter/.pub-cache/hosted/pub.dartlang.org/url_launcher-5.0.2/lib" />

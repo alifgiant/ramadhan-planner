@@ -3,8 +3,8 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:taskist/model/element.dart';
-import 'package:taskist/ui/page_detail.dart';
+import 'package:khatam_quran/model/element.dart';
+import 'package:khatam_quran/ui/page_detail.dart';
 
 class DonePage extends StatefulWidget {
   final FirebaseUser user;
@@ -27,44 +27,21 @@ class _DonePageState extends State<DonePage>
             children: <Widget>[
               Padding(
                 padding: EdgeInsets.only(top: 50.0),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  crossAxisAlignment: CrossAxisAlignment.center,
+                child: Column(
                   children: <Widget>[
-                    Expanded(
-                      flex: 1,
-                      child: Container(
-                        color: Colors.grey,
-                        height: 1.5,
-                      ),
+                    Text(
+                      'Khatam Al~Quran',
+                      style: new TextStyle(
+                          fontSize: 30.0, fontWeight: FontWeight.bold),
                     ),
-                    Expanded(
-                        flex: 2,
-                        child: new Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: <Widget>[
-                            Text(
-                              'Task',
-                              style: new TextStyle(
-                                  fontSize: 30.0, fontWeight: FontWeight.bold),
-                            ),
-                            Text(
-                              'Done',
-                              style: new TextStyle(
-                                  fontSize: 28.0, color: Colors.grey),
-                            )
-                          ],
-                        )),
-                    Expanded(
-                      flex: 1,
-                      child: Container(
-                        color: Colors.grey,
-                        height: 1.5,
-                      ),
+                    Text(
+                      'Daftar Aktifitas Selesai',
+                      style: new TextStyle(
+                          fontSize: 30.0, fontWeight: FontWeight.bold),
                     ),
                   ],
                 ),
-              ),
+              )
             ],
           ),
           Padding(

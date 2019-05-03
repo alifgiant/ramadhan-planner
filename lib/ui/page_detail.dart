@@ -4,8 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_colorpicker/flutter_colorpicker.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:taskist/model/element.dart';
-import 'package:taskist/utils/diamond_fab.dart';
+import 'package:khatam_quran/model/element.dart';
+import 'package:khatam_quran/utils/diamond_fab.dart';
 
 class DetailPage extends StatefulWidget {
   final FirebaseUser user;

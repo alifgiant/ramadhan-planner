@@ -1,9 +1,9 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:taskist/service/authentication.dart';
-import 'package:taskist/ui/page_login_signup.dart';
-import 'package:taskist/ui/home_page.dart';
+import 'package:khatam_quran/service/authentication.dart';
+import 'package:khatam_quran/ui/page_login_signup.dart';
+import 'package:khatam_quran/ui/home_page.dart';
 
 class RootPage extends StatefulWidget {
 

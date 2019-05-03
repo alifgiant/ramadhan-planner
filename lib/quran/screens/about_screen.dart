@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:taskist/quran/localizations/app_localizations.dart';
-import 'package:scoped_model/scoped_model.dart';
-import 'package:pub_semver/pub_semver.dart';
+import 'package:khatam_quran/quran/localizations/app_localizations.dart';
 import 'package:provider/provider.dart';
+import 'package:pub_semver/pub_semver.dart';
 
 class AboutScreen extends StatefulWidget {
   @override

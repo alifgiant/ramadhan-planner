@@ -1,14 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:loadmore/loadmore.dart';
-import 'package:taskist/quran/helpers/settings_helpers.dart';
-import 'package:taskist/quran/helpers/shimmer_helpers.dart';
-import 'package:taskist/quran/localizations/app_localizations.dart';
-import 'package:taskist/quran/models/chapters_models.dart';
-import 'package:taskist/quran/models/juz_model.dart';
-import 'package:taskist/quran/screens/quran_aya_screen.dart';
-import 'package:taskist/quran/services/quran_data_services.dart';
+import 'package:khatam_quran/quran/helpers/settings_helpers.dart';
+import 'package:khatam_quran/quran/helpers/shimmer_helpers.dart';
+import 'package:khatam_quran/quran/localizations/app_localizations.dart';
+import 'package:khatam_quran/quran/models/chapters_models.dart';
+import 'package:khatam_quran/quran/models/juz_model.dart';
+import 'package:khatam_quran/quran/screens/quran_aya_screen.dart';
+import 'package:khatam_quran/quran/services/quran_data_services.dart';
 import 'package:scoped_model/scoped_model.dart';
-import 'dart:math' as math;
 
 class QuranJuzScreen extends StatefulWidget {
   @override

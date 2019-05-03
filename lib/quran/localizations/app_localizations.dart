@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import 'package:taskist/quran/l10n/messages_all.dart';
+import 'package:khatam_quran/quran/l10n/messages_all.dart';
 import 'package:quiver/strings.dart';
 
 // Run this flutter packages pub run intl_translation:extract_to_arb --output-dir=lib/l10n lib/localizations/app_localizations.dart

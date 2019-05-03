@@ -1,29 +1,20 @@
 import 'dart:async';
-import 'dart:convert';
-import 'dart:io';
 
+import 'package:dio/dio.dart';
 import 'package:encrypt/encrypt.dart' as encrypt;
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import 'package:khatam_quran/quran/app_settings.dart';
+import 'package:khatam_quran/quran/helpers/my_event_bus.dart';
+import 'package:khatam_quran/quran/main.dart';
+import 'package:khatam_quran/quran/models/translation_quran_model.dart';
+import 'package:khatam_quran/quran/services/database_file_service.dart';
+import 'package:khatam_quran/quran/services/quran_data_services.dart';
+import 'package:khatam_quran/quran/services/translations_list_service.dart';
 import 'package:path/path.dart';
-import 'package:queries/collections.dart';
-import 'package:quiver/strings.dart';
-import 'package:taskist/quran/app_settings.dart';
-import 'package:taskist/quran/helpers/my_event_bus.dart';
-import 'package:taskist/quran/main.dart';
-import 'package:taskist/quran/models/translation_quran_model.dart';
-import 'package:taskist/quran/services/database_file_service.dart';
-import 'package:taskist/quran/services/quran_data_services.dart';
-import 'package:taskist/quran/services/translations_list_service.dart';
 import 'package:scoped_model/scoped_model.dart';
 import 'package:sqflite/sqflite.dart';
-import 'package:sticky_headers/sticky_headers.dart';
-import 'package:flutter_list_drag_and_drop/drag_and_drop_list.dart';
-import 'package:flutter_list_drag_and_drop/my_draggable.dart';
-import 'package:dio/dio.dart';
 import 'package:tuple/tuple.dart';
-import 'package:flutter/services.dart' show rootBundle;
-import 'package:uuid/uuid.dart';
 
 class DownloadTranslationsScreen extends StatefulWidget {
   @override

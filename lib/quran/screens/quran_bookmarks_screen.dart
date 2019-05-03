@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
-import 'package:taskist/quran/helpers/colors_settings.dart';
-import 'package:taskist/quran/helpers/shimmer_helpers.dart';
-import 'package:taskist/quran/localizations/app_localizations.dart';
-import 'package:taskist/quran/main.dart';
-import 'package:taskist/quran/models/bookmarks_model.dart';
-import 'package:taskist/quran/services/bookmarks_data_service.dart';
+import 'package:khatam_quran/quran/helpers/colors_settings.dart';
+import 'package:khatam_quran/quran/helpers/shimmer_helpers.dart';
+import 'package:khatam_quran/quran/localizations/app_localizations.dart';
+import 'package:khatam_quran/quran/main.dart';
+import 'package:khatam_quran/quran/models/bookmarks_model.dart';
+import 'package:khatam_quran/quran/services/bookmarks_data_service.dart';
 import 'package:scoped_model/scoped_model.dart';
 import 'package:intl/intl.dart' as intl;
 import 'package:flutter_slidable/flutter_slidable.dart';

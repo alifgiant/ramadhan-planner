@@ -1,6 +1,6 @@
 import 'dart:io';
 import 'package:path/path.dart';
-import 'package:taskist/quran/models/bookmarks_model.dart';
+import 'package:khatam_quran/quran/models/bookmarks_model.dart';
 import 'package:sqflite/sqflite.dart';
 import 'package:flutter/services.dart' show rootBundle;
 

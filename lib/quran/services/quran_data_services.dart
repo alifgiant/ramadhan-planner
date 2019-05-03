@@ -1,28 +1,21 @@
 import 'dart:async' show Future;
 import 'dart:io';
 import 'dart:ui';
+
 import 'package:flutter/services.dart' show rootBundle;
 import 'package:flutter_test/flutter_test.dart';
-import 'package:queries/queries.dart';
-import 'package:quiver/strings.dart';
-import 'package:taskist/quran/app_settings.dart';
-import 'package:taskist/quran/main.dart';
-import 'package:taskist/quran/models/bookmarks_model.dart';
-import 'package:taskist/quran/models/chapters_models.dart';
-import 'package:taskist/quran/models/juz_model.dart';
-import 'package:taskist/quran/models/quran_data_model.dart';
-import 'package:taskist/quran/models/translation_quran_model.dart';
-import 'package:taskist/quran/services/bookmarks_data_service.dart';
-import 'package:taskist/quran/services/translations_list_service.dart';
-import 'package:sqflite/sqflite.dart';
-import 'package:xml2json/xml2json.dart';
+import 'package:khatam_quran/quran/main.dart';
+import 'package:khatam_quran/quran/models/bookmarks_model.dart';
+import 'package:khatam_quran/quran/models/chapters_models.dart';
+import 'package:khatam_quran/quran/models/juz_model.dart';
+import 'package:khatam_quran/quran/models/quran_data_model.dart';
+import 'package:khatam_quran/quran/models/translation_quran_model.dart';
+import 'package:khatam_quran/quran/services/bookmarks_data_service.dart';
+import 'package:khatam_quran/quran/services/translations_list_service.dart';
 import 'package:path/path.dart' as Path;
-import 'package:encrypt/encrypt.dart';
-import 'dart:convert' show jsonDecode, utf8;
 import 'package:path_provider/path_provider.dart' as pathProvider;
-import 'package:uuid/uuid.dart';
-import 'package:queries/collections.dart';
 import 'package:queries/queries.dart';
+import 'package:sqflite/sqflite.dart';
 
 abstract class IQuranDataService {
   Future<List<Aya>> getQuranListAya2(

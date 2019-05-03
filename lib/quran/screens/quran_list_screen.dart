@@ -1,9 +1,9 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:taskist/quran/screens/quran_bookmarks_screen.dart';
-import 'package:taskist/quran/screens/quran_juz_screen.dart';
-import 'package:taskist/quran/screens/quran_sura_screen.dart';
+import 'package:khatam_quran/quran/screens/quran_bookmarks_screen.dart';
+import 'package:khatam_quran/quran/screens/quran_juz_screen.dart';
+import 'package:khatam_quran/quran/screens/quran_sura_screen.dart';
 
 class QuranListScreen extends StatefulWidget {
   final int currentTabIndex;

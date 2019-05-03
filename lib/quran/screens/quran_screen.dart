@@ -3,10 +3,10 @@ import 'dart:async';
 import 'package:bubble_tab_indicator/bubble_tab_indicator.dart';
 import 'package:flutter/material.dart';
 import 'package:function_types/function_types.dart';
-import 'package:taskist/quran/events/change_language_event.dart';
-import 'package:taskist/quran/helpers/my_event_bus.dart';
-import 'package:taskist/quran/localizations/app_localizations.dart';
-import 'package:taskist/quran/screens/quran_list_screen.dart';
+import 'package:khatam_quran/quran/events/change_language_event.dart';
+import 'package:khatam_quran/quran/helpers/my_event_bus.dart';
+import 'package:khatam_quran/quran/localizations/app_localizations.dart';
+import 'package:khatam_quran/quran/screens/quran_list_screen.dart';
 
 class QuranScreen extends StatefulWidget {
   @override

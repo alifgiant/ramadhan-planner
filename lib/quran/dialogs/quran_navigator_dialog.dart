@@ -1,10 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:taskist/quran//helpers/settings_helpers.dart';
-import 'package:taskist/quran/models/chapters_models.dart';
-import 'package:taskist/quran/models/quran_data_model.dart';
-import 'package:taskist/quran/services/quran_data_services.dart';
+import 'package:khatam_quran/quran/models/chapters_models.dart';
+import 'package:khatam_quran/quran/models/quran_data_model.dart';
 import 'package:scoped_model/scoped_model.dart';
 
 class QuranNavigatorDialog extends StatefulWidget {

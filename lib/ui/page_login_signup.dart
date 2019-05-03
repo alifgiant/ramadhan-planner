@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:taskist/service/authentication.dart';
+import 'package:khatam_quran/service/authentication.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
 class LoginSignupPage extends StatefulWidget {

@@ -2,14 +2,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:taskist/ui/page_done.dart';
-import 'package:taskist/ui/page_settings.dart';
-import 'package:taskist/ui/page_task.dart';
+import 'package:khatam_quran/ui/page_done.dart';
+import 'package:khatam_quran/ui/page_settings.dart';
+import 'package:khatam_quran/ui/page_task.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:taskist/service/authentication.dart';
-import 'package:taskist/service/notification.dart';
-import 'package:taskist/quran/screens/home_screen.dart';
-import 'package:flutter_local_notifications/flutter_local_notifications.dart';
+import 'package:khatam_quran/service/authentication.dart';
+import 'package:khatam_quran/service/notification.dart';
+import 'package:khatam_quran/quran/screens/home_screen.dart';
+//import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 
 class HomePage extends StatefulWidget {
 
@@ -26,7 +26,7 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin {
 
   int _currentIndex = 1;
-  AppNotification notification = new AppNotification();
+//  AppNotification notification = new AppNotification();
   final FirebaseUser _currentUser;
 
   List<Widget> _children;
@@ -39,8 +39,8 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
     super.initState();
 
 
-    notification.init(notificationCallback);
-    notification.showNotificationWithDefaultSound();
+//    notification.init(notificationCallback);
+//    notification.showNotificationWithDefaultSound();
 
     _children = [
       DonePage(

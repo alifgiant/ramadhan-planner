@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:taskist/quran/screens/about_screen.dart';
-import 'package:taskist/quran/screens/home_screen.dart';
-import 'package:taskist/quran/screens/settings_screen.dart';
+import 'package:khatam_quran/quran/screens/about_screen.dart';
+import 'package:khatam_quran/quran/screens/home_screen.dart';
+import 'package:khatam_quran/quran/screens/settings_screen.dart';
 
 class Routes {
   static Map<String, WidgetBuilder> routes = {

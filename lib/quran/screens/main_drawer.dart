@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
-import 'package:taskist/quran/dialogs/quran_navigator_dialog.dart';
-import 'package:taskist/quran/helpers/settings_helpers.dart';
-import 'package:taskist/quran/localizations/app_localizations.dart';
-import 'package:taskist/quran/models/chapters_models.dart';
-import 'package:taskist/quran/models/quran_data_model.dart';
-import 'package:taskist/quran/screens/quran_aya_screen.dart';
-import 'package:taskist/quran/services/quran_data_services.dart';
+import 'package:khatam_quran/quran/dialogs/quran_navigator_dialog.dart';
+import 'package:khatam_quran/quran/helpers/settings_helpers.dart';
+import 'package:khatam_quran/quran/localizations/app_localizations.dart';
+import 'package:khatam_quran/quran/models/chapters_models.dart';
+import 'package:khatam_quran/quran/models/quran_data_model.dart';
+import 'package:khatam_quran/quran/screens/quran_aya_screen.dart';
+import 'package:khatam_quran/quran/services/quran_data_services.dart';
 import 'package:scoped_model/scoped_model.dart';
 
 class MainDrawer extends StatefulWidget {

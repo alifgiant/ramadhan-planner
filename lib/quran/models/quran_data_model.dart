@@ -4,7 +4,7 @@
 
 import 'dart:convert';
 
-import 'package:taskist/quran/models/bookmarks_model.dart';
+import 'package:khatam_quran/quran/models/bookmarks_model.dart';
 
 class QuranDataModel {
   Xml xml;

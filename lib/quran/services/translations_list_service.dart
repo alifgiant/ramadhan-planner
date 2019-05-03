@@ -1,8 +1,8 @@
 import 'dart:convert';
 import 'dart:io';
 
-import 'package:taskist/quran/models/translation_quran_model.dart';
-import 'package:taskist/quran/services/base_service.dart';
+import 'package:khatam_quran/quran/models/translation_quran_model.dart';
+import 'package:khatam_quran/quran/services/base_service.dart';
 import 'package:sqflite/sqflite.dart';
 
 abstract class ITranslationsListService {

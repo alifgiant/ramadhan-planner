@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:taskist/quran/helpers/colors_settings.dart';
-import 'package:taskist/quran/helpers/settings_helpers.dart';
-import 'package:taskist/quran/helpers/shimmer_helpers.dart';
-import 'package:taskist/quran/models/chapters_models.dart';
-import 'package:taskist/quran/models/quran_data_model.dart';
-import 'package:taskist/quran/screens/quran_aya_screen.dart';
-import 'package:taskist/quran/services/quran_data_services.dart';
+import 'package:khatam_quran/quran/helpers/colors_settings.dart';
+import 'package:khatam_quran/quran/helpers/settings_helpers.dart';
+import 'package:khatam_quran/quran/helpers/shimmer_helpers.dart';
+import 'package:khatam_quran/quran/models/chapters_models.dart';
+import 'package:khatam_quran/quran/models/quran_data_model.dart';
+import 'package:khatam_quran/quran/screens/quran_aya_screen.dart';
+import 'package:khatam_quran/quran/services/quran_data_services.dart';
 import 'package:scoped_model/scoped_model.dart';
 import 'package:bubble_tab_indicator/bubble_tab_indicator.dart';
 import 'dart:math' as math;

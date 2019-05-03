@@ -3,8 +3,8 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:taskist/model/element.dart';
-import 'package:taskist/ui/page_detail.dart';
+import 'package:khatam_quran/model/element.dart';
+import 'package:khatam_quran/ui/page_detail.dart';
 import 'dart:math' as math;
 
 import 'page_addlist.dart';

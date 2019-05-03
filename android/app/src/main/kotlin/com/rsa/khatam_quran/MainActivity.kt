@@ -1,4 +1,4 @@
-package com.rsa.planner
+package com.rsa.khatam_quran
 
 import android.os.Bundle
 

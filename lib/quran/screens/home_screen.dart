@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:taskist/quran/screens/quran_screen.dart';
+import 'package:khatam_quran/quran/screens/quran_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   @override

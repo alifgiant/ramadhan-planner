@@ -2,7 +2,7 @@ import 'dart:convert';
 import 'dart:ui';
 
 import 'package:quiver/strings.dart';
-import 'package:taskist/quran/models/theme_model.dart';
+import 'package:khatam_quran/quran/models/theme_model.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class SettingsHelpers {
