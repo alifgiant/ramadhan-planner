@@ -157,104 +157,9 @@ class _DetailPageState extends State<DetailPage> {
             padding: EdgeInsets.only(top: 150.0),
             child: new Column(
               children: <Widget>[
-                Padding(
-                  padding: EdgeInsets.only(top: 5.0, left: 50.0, right: 20.0),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: <Widget>[
-                      Flexible(
-                        fit: FlexFit.loose,
-                        child: Text(
-                          widget.currentList.keys.elementAt(widget.i),
-                          softWrap: true,
-                          overflow: TextOverflow.fade,
-                          style: TextStyle(
-                              fontWeight: FontWeight.bold, fontSize: 35.0),
-                        ),
-                      ),
-                      GestureDetector(
-                        onTap: () {
-                          showDialog(
-                            context: context,
-                            builder: (BuildContext context) {
-                              return new AlertDialog(
-                                title: Text("Delete: " + widget.currentList.keys.elementAt(widget.i).toString()),
-                                content: Text(
-                                    "Are you sure you want to delete this list?", style: TextStyle(fontWeight: FontWeight.w400),),
-                                actions: <Widget>[
-                                  ButtonTheme(
-                                    //minWidth: double.infinity,
-                                    child: RaisedButton(
-                                      elevation: 3.0,
-                                      onPressed: () {
-                                        Navigator.pop(context);
-                                      },
-                                      child: Text('No'),
-                                      color: currentColor,
-                                      textColor: const Color(0xffffffff),
-                                    ),
-                                  ),
-                                  ButtonTheme(
-                                    //minWidth: double.infinity,
-                                    child: RaisedButton(
-                                      elevation: 3.0,
-                                      onPressed: () {
-                                        Firestore.instance
-                                            .collection(widget.user.uid)
-                                            .document(widget.currentList.keys
-                                            .elementAt(widget.i))
-                                            .delete();
-                                        Navigator.pop(context);
-                                        Navigator.of(context).pop();
-                                      },
-                                      child: Text('YES'),
-                                      color: currentColor,
-                                      textColor: const Color(0xffffffff),
-                                    ),
-                                  ),
-                                ],
-                              );
-                            },
-                          );
-                        },
-                        child: Icon(
-                          FontAwesomeIcons.trash,
-                          size: 25.0,
-                          color: currentColor,
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-                Padding(
-                  padding: EdgeInsets.only(top: 5.0, left: 50.0),
-                  child: Row(
-                    children: <Widget>[
-                      new Text(
-                        nbIsDone.toString() +
-                            " of " +
-                            listElement.length.toString() +
-                            " tasks",
-                        style: TextStyle(fontSize: 18.0, color: Colors.black54),
-                      ),
-                    ],
-                  ),
-                ),
-                Padding(
-                  padding: EdgeInsets.only(top: 5.0),
-                  child: Row(
-                    children: <Widget>[
-                      Expanded(
-                        flex: 2,
-                        child: Container(
-                          margin: EdgeInsets.only(left: 50.0),
-                          color: Colors.grey,
-                          height: 1.5,
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
+                getTaskDetailDeleteTitle(),
+                getTaskDetailTitle(nbIsDone,listElement),
+                getTaskDetailLineSeparator(),
                 Padding(
                   padding: EdgeInsets.only(top: 30.0),
                   child: Column(
@@ -282,7 +187,7 @@ class _DetailPageState extends State<DetailPage> {
                                   },
                                   child: Container(
                                     height: 50.0,
-                                    color: listElement.elementAt(i).isDone
+                                    color: ! listElement.elementAt(i).isDone
                                         ? Color(0xFFF0F0F0)
                                         : Color(0xFFFCFCFC),
                                     child: Padding(
@@ -444,6 +349,113 @@ class _DetailPageState extends State<DetailPage> {
           ),
         ),
       ]),
+    );
+  }
+
+  Widget getTaskDetailDeleteTitle() {
+    return Padding(
+      padding: EdgeInsets.only(top: 5.0, left: 50.0, right: 20.0),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: <Widget>[
+          Flexible(
+            fit: FlexFit.loose,
+            child: Text(
+              widget.currentList.keys.elementAt(widget.i),
+              softWrap: true,
+              overflow: TextOverflow.fade,
+              style: TextStyle(
+                  fontWeight: FontWeight.bold, fontSize: 35.0),
+            ),
+          ),
+          GestureDetector(
+            onTap: () {
+              showDialog(
+                context: context,
+                builder: (BuildContext context) {
+                  return new AlertDialog(
+                    title: Text("Delete: " + widget.currentList.keys.elementAt(widget.i).toString()),
+                    content: Text(
+                      "Are you sure you want to delete this list?", style: TextStyle(fontWeight: FontWeight.w400),),
+                    actions: <Widget>[
+                      ButtonTheme(
+                        //minWidth: double.infinity,
+                        child: RaisedButton(
+                          elevation: 3.0,
+                          onPressed: () {
+                            Navigator.pop(context);
+                          },
+                          child: Text('No'),
+                          color: currentColor,
+                          textColor: const Color(0xffffffff),
+                        ),
+                      ),
+                      ButtonTheme(
+                        //minWidth: double.infinity,
+                        child: RaisedButton(
+                          elevation: 3.0,
+                          onPressed: () {
+                            Firestore.instance
+                                .collection(widget.user.uid)
+                                .document(widget.currentList.keys
+                                .elementAt(widget.i))
+                                .delete();
+                            Navigator.pop(context);
+                            Navigator.of(context).pop();
+                          },
+                          child: Text('YES'),
+                          color: currentColor,
+                          textColor: const Color(0xffffffff),
+                        ),
+                      ),
+                    ],
+                  );
+                },
+              );
+            },
+            child: Icon(
+              FontAwesomeIcons.trash,
+              size: 25.0,
+              color: currentColor,
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget getTaskDetailTitle(int nbIsDone, List<ElementTask> listElement) {
+    return Padding(
+      padding: EdgeInsets.only(top: 5.0, left: 50.0),
+      child: Row(
+        children: <Widget>[
+          new Text(
+            nbIsDone.toString() +
+                " of " +
+                listElement.length.toString() +
+                " tasks",
+            style: TextStyle(fontSize: 18.0, color: Colors.black54),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget getTaskDetailLineSeparator() {
+    return Padding(
+      padding: EdgeInsets.only(top: 5.0),
+      child: Row(
+        children: <Widget>[
+          Expanded(
+            flex: 2,
+            child: Container(
+              margin: EdgeInsets.only(left: 50.0),
+              color: Colors.grey,
+              height: 1.5,
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
