@@ -23,7 +23,7 @@ class _DonePageState extends State<DonePage>
       body: ListView(
         children: <Widget>[
           Padding(
-            padding: EdgeInsets.all(25),
+            padding: EdgeInsets.all(50),
             child:
             buildTitle(),
           ),
@@ -95,25 +95,22 @@ class _DonePageState extends State<DonePage>
   }
 
   Widget buildAddTaskButton() {
-    return Padding(
-      padding: EdgeInsets.only(top: 0.0),
-      child: new Column(
-        children: <Widget>[
-          new Container(
-            width: 80.0,
-            height: 80.0,
-            decoration: new BoxDecoration(
-              color: Color(4279814837),
-              shape: BoxShape.circle,
-            ),
-            child: new IconButton(
-              icon: new Icon(Icons.check, color: Colors.white),
-              iconSize: 50.0,
-            ),
-          )
-          ,
-        ],
-      ),
+    return new Column(
+      children: <Widget>[
+        new Container(
+          width: 80.0,
+          height: 80.0,
+          decoration: new BoxDecoration(
+            color: Color(4279814837),
+            shape: BoxShape.circle,
+          ),
+          child: new IconButton(
+            icon: new Icon(Icons.check, color: Colors.white),
+            iconSize: 50.0,
+          ),
+        )
+        ,
+      ],
     );
   }
 

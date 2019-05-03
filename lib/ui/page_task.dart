@@ -45,24 +45,10 @@ class _TaskPageState extends State<TaskPage>
       body: ListView(
         children: <Widget>[
           Padding(
-            padding: EdgeInsets.all(25),
-            child:
-            new Row(
-              mainAxisSize: MainAxisSize.max,
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: <Widget>[
-                new Expanded(
-                  flex: 1,
-                  child: buildTitle(),
-                ),
-                new Expanded(
-                    flex: 1,
-                    child: buildAddTaskButton()
-                ),
-              ],
-            ),
+            padding: EdgeInsets.all(50),
+            child: buildTitle(),
           ),
+          buildAddTaskButton(),
           buildList(),
         ],
       ),
@@ -96,24 +82,24 @@ class _TaskPageState extends State<TaskPage>
     );
   }
 
-  Widget buildAddTaskButton(){
+  Widget buildAddTaskButton() {
     return new Column(
-      crossAxisAlignment: CrossAxisAlignment.end,
       children: <Widget>[
         new Container(
-          width: 50.0,
-          height: 50.0,
+          width: 80.0,
+          height: 80.0,
           decoration: new BoxDecoration(
               color: Color(4283326968),
               border: new Border.all(color: Color(4283326968)),
               borderRadius: BorderRadius.all(Radius.circular(7.0))
           ),
           child: new IconButton(
-            icon: new Icon(Icons.add, color: Colors.white,),
+            icon: new Icon(Icons.add, color: Colors.white),
+            iconSize: 50.0,
             onPressed: _addTaskPressed,
-            iconSize: 30.0,
           ),
-        ),
+        )
+        ,
       ],
     );
   }
