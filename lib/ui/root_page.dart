@@ -25,7 +25,6 @@ class _RootPageState extends State<RootPage> {
     widget.auth.getCurrentUser().then((user) {
       setState(() {
         _user = user;
-        print('CURRENT USER : $user');
         authStatus =
         user?.uid == null ? AuthStatus.NOT_LOGGED_IN : AuthStatus.LOGGED_IN;
       });
@@ -61,18 +60,15 @@ class _RootPageState extends State<RootPage> {
   Widget build(BuildContext context) {
     switch (authStatus) {
       case AuthStatus.NOT_DETERMINED :
-        print('AUTH STATE NOT DETERMIND}');
         return _buildWaitingScreen();
         break;
       case AuthStatus.NOT_LOGGED_IN :
-        print('AUTH STATE NOT LOGGED IN}');
         return new LoginSignupPage(
           auth: widget.auth,
           onSignIn: _onLoggedIn,
         );
         break;
       case AuthStatus.LOGGED_IN :
-        print('AUTH STATE LOGGED IN }');
         if ( _user != null && _user.uid.isNotEmpty) {
           return new HomePage(auth: widget.auth, user: _user);
         } else
