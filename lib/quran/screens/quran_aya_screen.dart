@@ -1,8 +1,7 @@
 import 'dart:async';
-import 'dart:convert';
 
+import 'package:after_layout/after_layout.dart';
 import 'package:flutter/material.dart';
-import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:khatam_quran/quran/controls/my_draggable_scrollbar.dart';
 import 'package:khatam_quran/quran/dialogs/quran_navigator_dialog.dart';
 import 'package:khatam_quran/quran/events/font_size_event.dart';
@@ -18,12 +17,10 @@ import 'package:khatam_quran/quran/models/quran_data_model.dart';
 import 'package:khatam_quran/quran/models/translation_quran_model.dart';
 import 'package:khatam_quran/quran/services/bookmarks_data_service.dart';
 import 'package:khatam_quran/quran/services/quran_data_services.dart';
-import 'package:scoped_model/scoped_model.dart';
-import 'package:after_layout/after_layout.dart';
-import 'package:draggable_scrollbar/draggable_scrollbar.dart';
+import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:quiver/strings.dart';
+import 'package:scoped_model/scoped_model.dart';
 import 'package:tuple/tuple.dart';
-import 'package:flutter_picker/flutter_picker.dart';
 
 class QuranAyaScreen extends StatefulWidget {
   final Chapter chapter;
@@ -76,6 +73,7 @@ class _QuranAyaScreenState extends State<QuranAyaScreen>
       model: quranAyaScreenScopedModel,
       child: Scaffold(
         appBar: AppBar(
+          backgroundColor: Color(4283326968),
           title: InkWell(
             child: Container(
               alignment: Alignment.centerLeft,

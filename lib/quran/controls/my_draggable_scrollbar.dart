@@ -11,7 +11,7 @@ class MyDraggableScrollBar {
     return DraggableScrollbar(
       controller: scrollController,
       heightScrollThumb: heightScrollThumb,
-      backgroundColor: Theme.of(context).accentColor,
+      backgroundColor: Color(4283326968),
       scrollThumbBuilder: (
         Color backgroundColor,
         Animation<double> thumbAnimation,
