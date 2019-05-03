@@ -7,6 +7,8 @@ import 'package:taskist/ui/page_settings.dart';
 import 'package:taskist/ui/page_task.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:taskist/service/authentication.dart';
+import 'package:taskist/service/notification.dart';
+import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 
 class HomePage extends StatefulWidget {
 
@@ -23,15 +25,21 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin {
 
   int _currentIndex = 1;
+  AppNotification notification = new AppNotification();
   final FirebaseUser _currentUser;
 
-  _HomePageState(this._currentUser);
-
   List<Widget> _children;
+
+
+  _HomePageState(this._currentUser);
 
   @override
   void initState() {
     super.initState();
+
+
+    notification.init(notificationCallback);
+    notification.showNotificationWithDefaultSound();
 
     _children = [
       DonePage(
@@ -49,6 +57,14 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
       DeviceOrientation.portraitUp,
       DeviceOrientation.portraitDown,
     ]);
+  }
+
+  Future notificationCallback(String payload) async{
+    showDialog(context: context,
+        builder: (_) => new AlertDialog(
+            title: const Text("Here is your payload"),
+            content: new Text("Payload : $payload")
+        ));
   }
 
   @override

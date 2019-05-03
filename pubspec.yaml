@@ -20,6 +20,8 @@ dev_dependencies:
   firebase_auth: ^0.8.2
   cloud_firestore: ^0.9.7
 
+  flutter_local_notifications: ^0.7.0
+
   font_awesome_flutter: ^8.0.1
 
   flutter_colorpicker: ^0.2.2
