@@ -431,9 +431,9 @@ class _DetailPageState extends State<DetailPage> {
         children: <Widget>[
           new Text(
             nbIsDone.toString() +
-                " of " +
+                " dari " +
                 listElement.length.toString() +
-                " tasks",
+                " aktifitas",
             style: TextStyle(fontSize: 18.0, color: Colors.black54),
           ),
         ],
