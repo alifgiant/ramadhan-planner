@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:taskist/quran/screens/main_drawer.dart';
 import 'package:taskist/quran/screens/quran_screen.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -12,14 +11,7 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      // appBar: AppBar(
-      //   title: Text('title'),
-      // ),
-      drawer: Drawer(
-        child: MainDrawer(),
-      ),
-      body: QuranScreen(),
-    );
+    return QuranScreen();
+
   }
 }

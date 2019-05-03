@@ -2,13 +2,10 @@ import 'dart:async';
 
 import 'package:bubble_tab_indicator/bubble_tab_indicator.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:function_types/function_types.dart';
-import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:taskist/quran/events/change_language_event.dart';
 import 'package:taskist/quran/helpers/my_event_bus.dart';
 import 'package:taskist/quran/localizations/app_localizations.dart';
-import 'package:taskist/quran/screens/quran_bookmarks_screen.dart';
 import 'package:taskist/quran/screens/quran_list_screen.dart';
 
 class QuranScreen extends StatefulWidget {
@@ -22,7 +19,7 @@ class _QuranQuranScreenState extends State<QuranScreen>
     with TickerProviderStateMixin {
   TabController tabController;
 
-  double sliverAppBarChildrenHeight = 100;
+  double sliverAppBarChildrenHeight = 50;
   int currentTabBarChildren = 0;
   CustomTabBar customTabBar;
 
@@ -36,7 +33,7 @@ class _QuranQuranScreenState extends State<QuranScreen>
   void initState() {
     tabController = TabController(
       vsync: this,
-      length: 2,
+      length: 3,
     );
     tabController.addListener(() {
       void c() {
@@ -55,7 +52,7 @@ class _QuranQuranScreenState extends State<QuranScreen>
 
     quranListTabController = TabController(
       vsync: this,
-      length: 2,
+      length: 3,
     );
     quranListTabController.addListener(() {
       if (quranListTabController.indexIsChanging) {
@@ -91,60 +88,48 @@ class _QuranQuranScreenState extends State<QuranScreen>
 
   @override
   Widget build(BuildContext context) {
-    // This should be moves to initState
-    customTabBar = CustomTabBar(
-      tabBar: <Widget>[
-        Tab(
-          icon: Icon(FontAwesomeIcons.quran),
-        ),
-        Tab(
-          icon: Icon(FontAwesomeIcons.solidBookmark),
-        ),
-      ],
-      tabBarChildrens: () {
-        return <Widget>[
-          Container(
-            height: 50,
-            child: Container(
-              child: Scaffold(
-                body: TabBar(
-                  controller: quranListTabController,
-                  indicatorSize: TabBarIndicatorSize.tab,
-                  indicator: BubbleTabIndicator(
-                    indicatorHeight: 25.0,
-                    indicatorColor: Theme.of(context).accentColor,
-                    tabBarIndicatorSize: TabBarIndicatorSize.tab,
-                  ),
-                  labelColor: Theme.of(context).accentTextTheme.display1.color,
-                  unselectedLabelColor:
-                      Theme.of(context).textTheme.display1.color,
-                  tabs: <Widget>[
-                    Tab(
-                      text: AppLocalizations.of(context).suraText,
-                    ),
-                    Tab(
-                      text: AppLocalizations.of(context).juzText,
-                    ),
-                  ],
-                ),
+
+    var tabBarChildrens = <Widget>[
+      Container(
+        height: 50,
+        child: Container(
+          child: Scaffold(
+            body: TabBar(
+              controller: quranListTabController,
+              indicatorSize: TabBarIndicatorSize.tab,
+              indicator: BubbleTabIndicator(
+                indicatorHeight: 40.0,
+                indicatorColor: Colors.deepPurple,
+                tabBarIndicatorSize: TabBarIndicatorSize.tab,
               ),
+              labelColor: Colors.white,
+              unselectedLabelColor: Colors.grey,
+              tabs: <Widget>[
+                Tab(
+                  text: AppLocalizations.of(context).suraText,
+                ),
+                Tab(
+                  text: AppLocalizations.of(context).juzText,
+                ),Tab(
+                  text: "Bookmark",
+                ),
+              ],
             ),
           ),
-          Container(),
-        ];
-      },
-      tabBarHeight: <double>[
-        100,
-        50,
-      ],
-    );
+        ),
+      ),
+      Container(),
+    ];
 
     return Container(
       child: NestedScrollView(
         headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
           return <Widget>[
             SliverAppBar(
-              title: Text(AppLocalizations.of(context).appName),
+              title: Text(AppLocalizations.of(context).appName, style: TextStyle(
+               color: Colors.deepPurple
+              )),
+              backgroundColor: Colors.white10,
               pinned: true,
               floating: true,
               forceElevated: innerBoxIsScrolled,
@@ -154,11 +139,7 @@ class _QuranQuranScreenState extends State<QuranScreen>
                 child: Container(
                   child: Column(
                     children: <Widget>[
-                      TabBar(
-                        controller: tabController,
-                        tabs: customTabBar.tabBar,
-                      ),
-                      customTabBar.tabBarChildrens()[currentTabBarChildren],
+                      tabBarChildrens[currentTabBarChildren],
                     ],
                   ),
                 ),
@@ -173,8 +154,7 @@ class _QuranQuranScreenState extends State<QuranScreen>
                 ? QuranListScreen(
                     currentTabIndex: quranListCurrentTabIndex,
                   )
-                : Container(),
-            QuranBookmarksScreen(),
+                : Container()
           ],
         ),
       ),
