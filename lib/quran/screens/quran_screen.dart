@@ -99,7 +99,7 @@ class _QuranQuranScreenState extends State<QuranScreen>
               indicatorSize: TabBarIndicatorSize.tab,
               indicator: BubbleTabIndicator(
                 indicatorHeight: 40.0,
-                indicatorColor: Colors.deepPurple,
+                indicatorColor: Color(4283326968),
                 tabBarIndicatorSize: TabBarIndicatorSize.tab,
               ),
               labelColor: Colors.white,
@@ -126,9 +126,14 @@ class _QuranQuranScreenState extends State<QuranScreen>
         headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
           return <Widget>[
             SliverAppBar(
-              title: Text(AppLocalizations.of(context).appName, style: TextStyle(
-               color: Colors.deepPurple
-              )),
+              flexibleSpace: FlexibleSpaceBar(
+                background:
+                Padding(
+                    padding: EdgeInsets.only(left: 50, right: 50, top: 75),
+                    child: buildTitle()
+                ),
+              ),
+              expandedHeight: 300,
               backgroundColor: Colors.white10,
               pinned: true,
               floating: true,
@@ -160,6 +165,33 @@ class _QuranQuranScreenState extends State<QuranScreen>
       ),
     );
   }
+}
+
+Widget buildTitle() {
+  return new Column(
+    children: <Widget>[
+      Align(
+        alignment: Alignment.centerLeft,
+        child: Text(
+          'Khatam Alquran',
+          style: new TextStyle(
+              fontSize: 24.0, fontWeight: FontWeight.bold),
+        ),
+      ),
+      Padding(
+        padding: EdgeInsets.only(top: 5.0),
+        child: Align(
+          alignment: Alignment.centerLeft,
+          child: Text(
+            'Daftar Aktifitas Selesai',
+            style: new TextStyle(
+                color: Color(4283326968),
+                fontSize: 18.0, fontWeight: FontWeight.bold),
+          ),
+        ),
+      ),
+    ],
+  );
 }
 
 class CustomTabBar {

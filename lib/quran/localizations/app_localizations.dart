@@ -26,9 +26,9 @@ class AppLocalizations {
 
   String get appName {
     return Intl.message(
-      'Quran App',
-      name: 'appName',
-      desc: 'appName',
+      'Khatam Alquran',
+      name: 'Khatam Alquran',
+      desc: '30 Days Khatam Alquran',
     );
   }
 
