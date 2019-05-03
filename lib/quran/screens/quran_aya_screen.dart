@@ -272,6 +272,7 @@ class SettingsDialogWidgetState extends State<SettingsDialogWidget> {
     return Dialog(
       child: Scaffold(
         appBar: AppBar(
+          backgroundColor: Color(4283326968),
           leading: IconButton(
             onPressed: () {
               Navigator.of(context).pop();
@@ -312,8 +313,10 @@ class SettingsDialogWidgetState extends State<SettingsDialogWidget> {
                 min: SettingsHelpers.minFontSizeArabic,
                 max: maxFontSizeArabic,
                 value: fontSizeArabic,
-                activeColor: Theme.of(context).accentColor,
-                inactiveColor: Theme.of(context).dividerColor,
+//                activeColor: Theme.of(context).accentColor,
+                activeColor: Color(4283326968),
+//                inactiveColor: Theme.of(context).dividerColor,
+                inactiveColor: Color(4283326968),
                 onChanged: (double value) async {
                   await SettingsHelpers.instance.fontSizeArabic(value);
                   setState(
@@ -342,8 +345,10 @@ class SettingsDialogWidgetState extends State<SettingsDialogWidget> {
                 min: SettingsHelpers.minFontSizeTranslation,
                 max: maxFontSizeTranslation,
                 value: fontSizeTranslation,
-                activeColor: Theme.of(context).accentColor,
-                inactiveColor: Theme.of(context).dividerColor,
+//                activeColor: Theme.of(context).accentColor,
+                activeColor: Color(4283326968),
+//                inactiveColor: Theme.of(context).dividerColor,
+                inactiveColor: Color(4283326968),
                 onChanged: (double value) async {
                   await SettingsHelpers.instance.fontSizeTranslation(value);
                   setState(
