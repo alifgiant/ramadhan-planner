@@ -72,7 +72,7 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
       bottomNavigationBar: BottomNavigationBar(
         onTap: onTabTapped,
         currentIndex: _currentIndex,
-        fixedColor: Colors.deepPurple,
+        fixedColor: Color(4283326968),
         items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(
               icon: new Icon(FontAwesomeIcons.calendarCheck),
@@ -80,7 +80,7 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
           BottomNavigationBarItem(
               icon: new Icon(FontAwesomeIcons.calendar), title: new Text("")),
           BottomNavigationBarItem(
-              icon: new Icon(FontAwesomeIcons.slidersH), title: new Text(""))
+              icon: new Icon(FontAwesomeIcons.quran), title: new Text(""))
         ],
       ),
       body: _children[_currentIndex],
