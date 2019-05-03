@@ -141,13 +141,13 @@ class _NewTaskPageState extends State<NewTaskPage> {
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: <Widget>[
                                   Text(
-                                    'New',
+                                    'Aktifitas',
                                     style: new TextStyle(
                                         fontSize: 30.0,
                                         fontWeight: FontWeight.bold),
                                   ),
                                   Text(
-                                    'List',
+                                    ' baru',
                                     style: new TextStyle(
                                         fontSize: 28.0, color: Colors.grey),
                                   )
@@ -173,7 +173,7 @@ class _NewTaskPageState extends State<NewTaskPage> {
                                 border: new OutlineInputBorder(
                                     borderSide:
                                         new BorderSide(color: Colors.teal)),
-                                labelText: "List name",
+                                labelText: "Nama",
                                 contentPadding: EdgeInsets.only(
                                     left: 16.0,
                                     top: 20.0,
@@ -227,7 +227,7 @@ class _NewTaskPageState extends State<NewTaskPage> {
                                   },
                                 );
                               },
-                              child: Text('Card color'),
+                              child: Text('Warna kartu'),
                               color: currentColor,
                               textColor: const Color(0xffffffff),
                             ),
@@ -236,12 +236,12 @@ class _NewTaskPageState extends State<NewTaskPage> {
                       ),
                     ),
                     Padding(
-                      padding: EdgeInsets.only(top: 50.0),
+                      padding: EdgeInsets.only(top: 20.0),
                       child: new Column(
                         children: <Widget>[
                           new RaisedButton(
                             child: const Text(
-                              'Add',
+                              'Tambah',
                               style: TextStyle(color: Colors.white),
                             ),
                             color: Colors.blue,
