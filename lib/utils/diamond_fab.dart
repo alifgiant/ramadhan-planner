@@ -137,12 +137,7 @@ class _DiamondBorder extends ShapeBorder {
 
   @override
   Path getOuterPath(Rect rect, {TextDirection textDirection}) {
-    return Path()
-      ..moveTo(rect.left + rect.width / 2.0, rect.top)
-      ..lineTo(rect.right, rect.top + rect.height / 2.0)
-      ..lineTo(rect.left + rect.width / 2.0, rect.bottom)
-      ..lineTo(rect.left, rect.top + rect.height / 2.0)
-      ..close();
+    return Path()..addArc(Rect.fromLTWH(0.0, 0.0, rect.width, rect.height), 0, 360);
   }
 
   @override
