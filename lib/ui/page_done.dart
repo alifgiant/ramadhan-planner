@@ -22,36 +22,10 @@ class _DonePageState extends State<DonePage>
     return Scaffold(
       body: ListView(
         children: <Widget>[
-          new Column(
-            children: <Widget>[
-              Padding(
-                padding: EdgeInsets.only(top: 25.0, left: 20.0, right: 20.0),
-                child: Column(
-                  children: <Widget>[
-                    Align(
-                      alignment: Alignment.centerLeft,
-                      child: Text(
-                        'Khatam Alquran',
-                        style: new TextStyle(
-                            fontSize: 24.0, fontWeight: FontWeight.bold),
-                      ),
-                    ),
-                    Padding(
-                      padding: EdgeInsets.only(top: 5.0),
-                      child: Align(
-                        alignment: Alignment.centerLeft,
-                        child: Text(
-                          'Daftar Aktifitas Selesai',
-                          style: new TextStyle(
-                              color: Color(4283326968),
-                              fontSize: 18.0, fontWeight: FontWeight.bold),
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              )
-            ],
+          Padding(
+            padding: EdgeInsets.all(25),
+            child:
+            buildTitle(),
           ),
           buildAddTaskButton(),
           Padding(
@@ -69,6 +43,33 @@ class _DonePageState extends State<DonePage>
           ),
         ],
       ),
+    );
+  }
+
+  Widget buildTitle() {
+    return Column(
+      children: <Widget>[
+        Align(
+          alignment: Alignment.centerLeft,
+          child: Text(
+            'Khatam Alquran',
+            style: new TextStyle(
+                fontSize: 24.0, fontWeight: FontWeight.bold),
+          ),
+        ),
+        Padding(
+          padding: EdgeInsets.only(top: 5.0),
+          child: Align(
+            alignment: Alignment.centerLeft,
+            child: Text(
+              'Daftar Aktifitas Selesai',
+              style: new TextStyle(
+                  color: Color(4283326968),
+                  fontSize: 18.0, fontWeight: FontWeight.bold),
+            ),
+          ),
+        ),
+      ],
     );
   }
 
@@ -95,7 +96,7 @@ class _DonePageState extends State<DonePage>
 
   Widget buildAddTaskButton() {
     return Padding(
-      padding: EdgeInsets.only(top: 50.0),
+      padding: EdgeInsets.only(top: 0.0),
       child: new Column(
         children: <Widget>[
           new Container(

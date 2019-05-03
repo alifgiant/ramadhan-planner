@@ -5,7 +5,6 @@ import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:khatam_quran/model/element.dart';
 import 'package:khatam_quran/ui/page_detail.dart';
-import 'dart:math' as math;
 
 import 'page_addlist.dart';
 
@@ -45,51 +44,24 @@ class _TaskPageState extends State<TaskPage>
     return Scaffold(
       body: ListView(
         children: <Widget>[
-          _getToolbar(context),
-          new Column(
-            children: <Widget>[
-              Padding(
-                padding: EdgeInsets.only(top: 50.0),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: <Widget>[
-                    Expanded(
-                      flex: 1,
-                      child: Container(
-                        color: Colors.grey,
-                        height: 1.5,
-                      ),
-                    ),
-                    Expanded(
-                        flex: 2,
-                        child: new Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: <Widget>[
-                            Text(
-                              'Task',
-                              style: new TextStyle(
-                                  fontSize: 30.0, fontWeight: FontWeight.bold),
-                            ),
-                            Text(
-                              'Lists',
-                              style: new TextStyle(
-                                  fontSize: 28.0, color: Colors.grey),
-                            )
-                          ],
-                        )),
-                    Expanded(
-                      flex: 1,
-                      child: Container(
-                        color: Colors.grey,
-                        height: 1.5,
-                      ),
-                    ),
-                  ],
+          Padding(
+            padding: EdgeInsets.all(25),
+            child:
+            new Row(
+              mainAxisSize: MainAxisSize.max,
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: <Widget>[
+                new Expanded(
+                  flex: 1,
+                  child: buildTitle(),
                 ),
-              ),
-              buildAddTaskButton(),
-            ],
+                new Expanded(
+                    flex: 1,
+                    child: buildAddTaskButton()
+                ),
+              ],
+            ),
           ),
           buildList(),
         ],
@@ -97,30 +69,52 @@ class _TaskPageState extends State<TaskPage>
     );
   }
 
+  Widget buildTitle() {
+    return new Column(
+      children: <Widget>[
+        Align(
+          alignment: Alignment.centerLeft,
+          child: Text(
+            'Khatam Alquran',
+            style: new TextStyle(
+                fontSize: 24.0, fontWeight: FontWeight.bold),
+          ),
+        ),
+        Align(
+            alignment: Alignment.centerLeft,
+            child:
+            Padding(
+                padding: EdgeInsets.only(top: 5),
+                child: Text(
+                  'Daftar aktifitas',
+                  style: new TextStyle(
+                      color: Color(4283326968),
+                      fontSize: 18.0, fontWeight: FontWeight.bold),
+                ))
+        ),
+      ],
+    );
+  }
+
   Widget buildAddTaskButton(){
-    return Padding(
-      padding: EdgeInsets.only(top: 50.0),
-      child: new Column(
-        children: <Widget>[
-          new Container(
-            width: 50.0,
-            height: 50.0,
-            decoration: new BoxDecoration(
-                border: new Border.all(color: Colors.black38),
-                borderRadius: BorderRadius.all(Radius.circular(7.0))),
-            child: new IconButton(
-              icon: new Icon(Icons.add),
-              onPressed: _addTaskPressed,
-              iconSize: 30.0,
-            ),
+    return new Column(
+      crossAxisAlignment: CrossAxisAlignment.end,
+      children: <Widget>[
+        new Container(
+          width: 50.0,
+          height: 50.0,
+          decoration: new BoxDecoration(
+              color: Color(4283326968),
+              border: new Border.all(color: Color(4283326968)),
+              borderRadius: BorderRadius.all(Radius.circular(7.0))
           ),
-          Padding(
-            padding: EdgeInsets.only(top: 10.0),
-            child: Text('Add List',
-                style: TextStyle(color: Colors.black45)),
+          child: new IconButton(
+            icon: new Icon(Icons.add, color: Colors.white,),
+            onPressed: _addTaskPressed,
+            iconSize: 30.0,
           ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 
