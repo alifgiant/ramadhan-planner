@@ -8,6 +8,7 @@ import 'package:taskist/ui/page_task.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:taskist/service/authentication.dart';
 import 'package:taskist/service/notification.dart';
+import 'package:taskist/quran/screens/home_screen.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 
 class HomePage extends StatefulWidget {
@@ -48,9 +49,7 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
       TaskPage(
         user: _currentUser,
       ),
-      SettingsPage(
-        user: _currentUser,
-      )
+      HomeScreen(),
     ];
 
     SystemChrome.setPreferredOrientations([
