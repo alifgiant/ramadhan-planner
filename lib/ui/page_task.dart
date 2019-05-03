@@ -88,64 +88,72 @@ class _TaskPageState extends State<TaskPage>
                   ],
                 ),
               ),
-              Padding(
-                padding: EdgeInsets.only(top: 50.0),
-                child: new Column(
-                  children: <Widget>[
-                    new Container(
-                      width: 50.0,
-                      height: 50.0,
-                      decoration: new BoxDecoration(
-                          border: new Border.all(color: Colors.black38),
-                          borderRadius: BorderRadius.all(Radius.circular(7.0))),
-                      child: new IconButton(
-                        icon: new Icon(Icons.add),
-                        onPressed: _addTaskPressed,
-                        iconSize: 30.0,
-                      ),
-                    ),
-                    Padding(
-                      padding: EdgeInsets.only(top: 10.0),
-                      child: Text('Add List',
-                          style: TextStyle(color: Colors.black45)),
-                    ),
-                  ],
-                ),
-              ),
+              buildAddTaskButton(),
             ],
           ),
-          Padding(
-            padding: EdgeInsets.only(top: 50.0),
-            child: Container(
-              height: 360.0,
-              padding: EdgeInsets.only(bottom: 25.0),
-              child: NotificationListener<OverscrollIndicatorNotification>(
-                onNotification: (overscroll) {
-                  overscroll.disallowGlow();
-                },
-                child: new StreamBuilder<QuerySnapshot>(
-                    stream: Firestore.instance
-                        .collection(widget.user.uid)
-                        .orderBy("date", descending: false)
-                        .snapshots(),
-                    builder: (BuildContext context,
-                        AsyncSnapshot<QuerySnapshot> snapshot) {
-                      if (!snapshot.hasData)
-                        return new Center(
-                            child: CircularProgressIndicator(
-                          backgroundColor: Colors.blue,
-                        ));
-                      return new ListView(
-                        physics: const BouncingScrollPhysics(),
-                        padding: EdgeInsets.only(left: 40.0, right: 40.0),
-                        scrollDirection: Axis.horizontal,
-                        children: getExpenseItems(snapshot),
-                      );
-                    }),
-              ),
+          buildList(),
+        ],
+      ),
+    );
+  }
+
+  Widget buildAddTaskButton(){
+    return Padding(
+      padding: EdgeInsets.only(top: 50.0),
+      child: new Column(
+        children: <Widget>[
+          new Container(
+            width: 50.0,
+            height: 50.0,
+            decoration: new BoxDecoration(
+                border: new Border.all(color: Colors.black38),
+                borderRadius: BorderRadius.all(Radius.circular(7.0))),
+            child: new IconButton(
+              icon: new Icon(Icons.add),
+              onPressed: _addTaskPressed,
+              iconSize: 30.0,
             ),
           ),
+          Padding(
+            padding: EdgeInsets.only(top: 10.0),
+            child: Text('Add List',
+                style: TextStyle(color: Colors.black45)),
+          ),
         ],
+      ),
+    );
+  }
+
+  Widget buildList(){
+    return Padding(
+      padding: EdgeInsets.only(top: 50.0),
+      child: Container(
+        height: 360.0,
+        padding: EdgeInsets.only(bottom: 25.0),
+        child: NotificationListener<OverscrollIndicatorNotification>(
+          onNotification: (overscroll) {
+            overscroll.disallowGlow();
+          },
+          child: new StreamBuilder<QuerySnapshot>(
+              stream: Firestore.instance
+                  .collection(widget.user.uid)
+                  .orderBy("date", descending: false)
+                  .snapshots(),
+              builder: (BuildContext context,
+                  AsyncSnapshot<QuerySnapshot> snapshot) {
+                if (!snapshot.hasData)
+                  return new Center(
+                      child: CircularProgressIndicator(
+                        backgroundColor: Colors.blue,
+                      ));
+                return new ListView(
+                  physics: const BouncingScrollPhysics(),
+                  padding: EdgeInsets.only(left: 40.0, right: 40.0),
+                  scrollDirection: Axis.horizontal,
+                  children: getExpenseItems(snapshot),
+                );
+              }),
+        ),
       ),
     );
   }

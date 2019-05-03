@@ -22,30 +22,40 @@ class _DonePageState extends State<DonePage>
     return Scaffold(
       body: ListView(
         children: <Widget>[
-          _getToolbar(context),
           new Column(
             children: <Widget>[
               Padding(
-                padding: EdgeInsets.only(top: 50.0),
+                padding: EdgeInsets.only(top: 25.0, left: 20.0, right: 20.0),
                 child: Column(
                   children: <Widget>[
-                    Text(
-                      'Khatam Al~Quran',
-                      style: new TextStyle(
-                          fontSize: 30.0, fontWeight: FontWeight.bold),
+                    Align(
+                      alignment: Alignment.centerLeft,
+                      child: Text(
+                        'Khatam Alquran',
+                        style: new TextStyle(
+                            fontSize: 24.0, fontWeight: FontWeight.bold),
+                      ),
                     ),
-                    Text(
-                      'Daftar Aktifitas Selesai',
-                      style: new TextStyle(
-                          fontSize: 30.0, fontWeight: FontWeight.bold),
+                    Padding(
+                      padding: EdgeInsets.only(top: 5.0),
+                      child: Align(
+                        alignment: Alignment.centerLeft,
+                        child: Text(
+                          'Daftar Aktifitas Selesai',
+                          style: new TextStyle(
+                              color: Color(4283326968),
+                              fontSize: 18.0, fontWeight: FontWeight.bold),
+                        ),
+                      ),
                     ),
                   ],
                 ),
               )
             ],
           ),
+          buildAddTaskButton(),
           Padding(
-            padding: EdgeInsets.only(top: 175.0),
+            padding: EdgeInsets.only(top: 50.0),
             child: Container(
               height: 360.0,
               padding: EdgeInsets.only(bottom: 25.0),
@@ -53,27 +63,54 @@ class _DonePageState extends State<DonePage>
                 onNotification: (overscroll) {
                   overscroll.disallowGlow();
                 },
-                child: new StreamBuilder<QuerySnapshot>(
-                    stream: Firestore.instance
-                        .collection(widget.user.uid).orderBy("date", descending: true)
-                        .snapshots(),
-                    builder: (BuildContext context,
-                        AsyncSnapshot<QuerySnapshot> snapshot) {
-                      if (!snapshot.hasData)
-                        return new Center(
-                            child: CircularProgressIndicator(
-                          backgroundColor: Colors.blue,
-                        ));
-                      return new ListView(
-                        physics: const BouncingScrollPhysics(),
-                        padding: EdgeInsets.only(left: 40.0, right: 40.0),
-                        scrollDirection: Axis.horizontal,
-                        children: getExpenseItems(snapshot),
-                      );
-                    }),
+                child: buildList(),
               ),
             ),
           ),
+        ],
+      ),
+    );
+  }
+
+  Widget buildList() {
+    return new StreamBuilder<QuerySnapshot>(
+        stream: Firestore.instance
+            .collection(widget.user.uid).orderBy("date", descending: true)
+            .snapshots(),
+        builder: (BuildContext context,
+            AsyncSnapshot<QuerySnapshot> snapshot) {
+          if (!snapshot.hasData)
+            return new Center(
+                child: CircularProgressIndicator(
+                  backgroundColor: Colors.blue,
+                ));
+          return new ListView(
+            physics: const BouncingScrollPhysics(),
+            padding: EdgeInsets.only(left: 40.0, right: 40.0),
+            scrollDirection: Axis.horizontal,
+            children: getExpenseItems(snapshot),
+          );
+        });
+  }
+
+  Widget buildAddTaskButton() {
+    return Padding(
+      padding: EdgeInsets.only(top: 50.0),
+      child: new Column(
+        children: <Widget>[
+          new Container(
+            width: 80.0,
+            height: 80.0,
+            decoration: new BoxDecoration(
+              color: Color(4279814837),
+              shape: BoxShape.circle,
+            ),
+            child: new IconButton(
+              icon: new Icon(Icons.check, color: Colors.white),
+              iconSize: 50.0,
+            ),
+          )
+          ,
         ],
       ),
     );

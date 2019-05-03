@@ -6,47 +6,10 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d72d5de6-a713-4718-bcab-1e3972bee4f1" name="Default" comment="Change app name">
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/taskist.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/khatam_quran.iml" afterDir="false" />
+    <list default="true" id="d72d5de6-a713-4718-bcab-1e3972bee4f1" name="Default" comment="Change project name &amp; id">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/app/src/main/kotlin/com/rsa/planner/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/src/main/kotlin/com/rsa/khatam_quran/MainActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/quran/dialogs/quran_navigator_dialog.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/quran/dialogs/quran_navigator_dialog.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/quran/helpers/settings_helpers.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/quran/helpers/settings_helpers.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/quran/localizations/app_localizations.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/quran/localizations/app_localizations.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/quran/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/quran/main.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/quran/models/quran_data_model.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/quran/models/quran_data_model.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/quran/routes/routes.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/quran/routes/routes.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/quran/screens/about_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/quran/screens/about_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/quran/screens/download_translations_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/quran/screens/download_translations_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/quran/screens/home_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/quran/screens/home_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/quran/screens/main_drawer.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/quran/screens/main_drawer.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/quran/screens/quran_aya_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/quran/screens/quran_aya_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/quran/screens/quran_bookmarks_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/quran/screens/quran_bookmarks_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/quran/screens/quran_juz_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/quran/screens/quran_juz_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/quran/screens/quran_list_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/quran/screens/quran_list_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/quran/screens/quran_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/quran/screens/quran_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/quran/screens/quran_sura_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/quran/screens/quran_sura_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/quran/screens/settings_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/quran/screens/settings_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/quran/services/bookmarks_data_service.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/quran/services/bookmarks_data_service.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/quran/services/quran_data_services.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/quran/services/quran_data_services.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/quran/services/translations_list_service.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/quran/services/translations_list_service.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/service/notification.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/service/notification.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/ui/home_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/ui/home_page.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/ui/page_detail.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/ui/page_detail.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/ui/page_done.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/ui/page_done.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/ui/page_login_signup.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/ui/page_login_signup.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/ui/page_task.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/ui/page_task.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/ui/root_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/ui/root_page.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/taskist.iml" beforeDir="false" afterPath="$PROJECT_DIR$/khatam_quran.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/taskist_android.iml" beforeDir="false" afterPath="$PROJECT_DIR$/khatam_quran_android.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/widget_test.dart" beforeDir="false" afterPath="$PROJECT_DIR$/test/widget_test.dart" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -55,105 +18,72 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pubspec.yaml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="39">
-              <caret line="10" column="16" selection-start-line="10" selection-start-column="16" selection-end-line="10" selection-end-column="16" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/service/notification.dart">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="11" column="35" selection-end-line="31" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/ui/home_page.dart">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="131">
-              <caret line="41" column="46" selection-start-line="41" selection-start-column="46" selection-end-line="41" selection-end-column="46" />
-              <folding>
-                <element signature="e#1#40#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/khatam_quran.iml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="53" selection-start-line="5" selection-start-column="53" selection-end-line="5" selection-end-column="53" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/android/app/src/main/AndroidManifest.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="1" column="26" selection-start-line="1" selection-start-column="26" selection-end-line="1" selection-end-column="26" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/android/app/src/main/kotlin/com/rsa/khatam_quran/MainActivity.kt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="51" lean-forward="true" selection-start-line="5" selection-start-column="51" selection-end-line="5" selection-end-column="51" />
-              <folding>
-                <element signature="e#25#140#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://D:/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_local_notifications-0.7.0/lib/src/flutter_local_notifications.dart">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="101">
-              <caret line="217" column="23" selection-start-line="217" selection-start-column="23" selection-end-line="217" selection-end-column="23" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/ui/page_task.dart">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1343">
-              <caret line="5" column="23" lean-forward="true" selection-start-line="5" selection-start-column="23" selection-end-line="5" selection-end-column="23" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/khatam_quran_android.iml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-255" />
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/widget_test.dart">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="13" column="35" selection-start-line="13" selection-start-column="35" selection-end-line="13" selection-end-column="35" />
-              <folding>
-                <element signature="e#354#402#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <splitter split-orientation="horizontal" split-proportion="0.5">
+      <split-first>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/lib/ui/page_done.dart">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="136">
+                  <caret line="23" column="27" selection-start-line="23" selection-start-column="27" selection-end-line="23" selection-end-column="27" />
+                  <folding>
+                    <element signature="e#0#54#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/lib/ui/page_addlist.dart">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="-612">
+                  <folding>
+                    <element signature="e#0#20#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/lib/ui/page_task.dart">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="85">
+                  <caret line="90" column="14" lean-forward="true" selection-start-line="90" selection-start-column="14" selection-end-line="90" selection-end-column="14" />
+                  <folding>
+                    <element signature="e#0#54#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/lib/ui/page_task.dart">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="84">
+                  <caret line="103" column="27" lean-forward="true" selection-start-line="103" selection-start-column="27" selection-end-line="103" selection-end-column="27" />
+                  <folding>
+                    <element signature="e#0#54#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/lib/utils/diamond_fab.dart">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="330">
+                  <caret line="142" column="11" selection-start-line="142" selection-start-column="11" selection-end-line="142" selection-end-column="11" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-second>
+    </splitter>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -219,9 +149,7 @@
         <option value="$PROJECT_DIR$/test/widget_test.dart" />
         <option value="$PROJECT_DIR$/lib/main.dart" />
         <option value="$PROJECT_DIR$/lib/ui/page_detail.dart" />
-        <option value="$PROJECT_DIR$/lib/ui/page_done.dart" />
         <option value="$PROJECT_DIR$/lib/ui/page_login_signup.dart" />
-        <option value="$PROJECT_DIR$/lib/ui/page_task.dart" />
         <option value="$PROJECT_DIR$/lib/ui/root_page.dart" />
         <option value="$PROJECT_DIR$/lib/quran/main.dart" />
         <option value="$PROJECT_DIR$/lib/quran/services/bookmarks_data_service.dart" />
@@ -244,11 +172,13 @@
         <option value="$PROJECT_DIR$/lib/quran/helpers/settings_helpers.dart" />
         <option value="$PROJECT_DIR$/lib/quran/dialogs/quran_navigator_dialog.dart" />
         <option value="$PROJECT_DIR$/android/app/build.gradle" />
-        <option value="$PROJECT_DIR$/android/app/src/main/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/pubspec.yaml" />
         <option value="$PROJECT_DIR$/lib/service/notification.dart" />
         <option value="$PROJECT_DIR$/lib/ui/home_page.dart" />
         <option value="$PROJECT_DIR$/android/app/src/main/kotlin/com/rsa/khatam_quran/MainActivity.kt" />
+        <option value="$PROJECT_DIR$/android/app/src/main/AndroidManifest.xml" />
+        <option value="$PROJECT_DIR$/lib/ui/page_task.dart" />
+        <option value="$PROJECT_DIR$/lib/ui/page_done.dart" />
       </list>
     </option>
   </component>
@@ -297,81 +227,7 @@
             <path>
               <item name="Khatam_Alquran" type="b2602c69:ProjectViewProjectNode" />
               <item name="Khatam_Alquran" type="462c0819:PsiDirectoryNode" />
-              <item name="android" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Khatam_Alquran" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Khatam_Alquran" type="462c0819:PsiDirectoryNode" />
-              <item name="android" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Khatam_Alquran" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Khatam_Alquran" type="462c0819:PsiDirectoryNode" />
-              <item name="android" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Khatam_Alquran" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Khatam_Alquran" type="462c0819:PsiDirectoryNode" />
-              <item name="android" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Khatam_Alquran" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Khatam_Alquran" type="462c0819:PsiDirectoryNode" />
-              <item name="android" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="kotlin" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Khatam_Alquran" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Khatam_Alquran" type="462c0819:PsiDirectoryNode" />
-              <item name="android" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="kotlin" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Khatam_Alquran" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Khatam_Alquran" type="462c0819:PsiDirectoryNode" />
-              <item name="android" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="kotlin" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="rsa" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Khatam_Alquran" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Khatam_Alquran" type="462c0819:PsiDirectoryNode" />
-              <item name="android" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="kotlin" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="rsa" type="462c0819:PsiDirectoryNode" />
-              <item name="khatam_quran" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Khatam_Alquran" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Khatam_Alquran" type="462c0819:PsiDirectoryNode" />
               <item name="lib" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Khatam_Alquran" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Khatam_Alquran" type="462c0819:PsiDirectoryNode" />
-              <item name="lib" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Khatam_Alquran" type="b2602c69:ProjectViewProjectNode" />
@@ -525,7 +381,14 @@
       <option name="project" value="LOCAL" />
       <updated>1556905537735</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Change project name &amp; id">
+      <created>1556910699901</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1556910699901</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TodoView">
@@ -541,7 +404,7 @@
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25302014" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.25302014" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="3" />
@@ -552,7 +415,7 @@
       <window_info id="Resources Explorer" order="8" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.48456377" visible="true" weight="0.53257793" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.48456377" visible="true" weight="0.16005665" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -584,7 +447,8 @@
     <MESSAGE value="Redesign alquran section" />
     <MESSAGE value="Change diamond button to circle" />
     <MESSAGE value="Change app name" />
-    <option name="LAST_COMMIT_MESSAGE" value="Change app name" />
+    <MESSAGE value="Change project name &amp; id" />
+    <option name="LAST_COMMIT_MESSAGE" value="Change project name &amp; id" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://D:/flutter/packages/flutter/lib/src/material/tab_controller.dart">
@@ -624,22 +488,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.flutter-plugins">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/utils/diamond_fab.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2414">
-          <caret line="142" column="11" selection-start-line="142" selection-start-column="11" selection-end-line="142" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/ui/page_addlist.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#20#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/ui/page_login_signup.dart">
       <provider selected="true" editor-type-id="text-editor">
@@ -881,16 +729,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/ui/page_done.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="32" column="35" selection-start-line="32" selection-start-column="35" selection-end-line="32" selection-end-column="35" />
-          <folding>
-            <element signature="e#0#54#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pubspec.lock">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
@@ -999,26 +837,55 @@
         <state relative-caret-position="-255" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/ui/page_task.dart">
+    <entry file="file://$PROJECT_DIR$/android/app/src/main/kotlin/com/rsa/khatam_quran/MainActivity.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1343">
-          <caret line="5" column="23" lean-forward="true" selection-start-line="5" selection-start-column="23" selection-end-line="5" selection-end-column="23" />
+        <state>
+          <caret column="28" selection-start-column="28" selection-end-column="28" />
+          <folding>
+            <element signature="e#25#140#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/android/app/src/main/AndroidManifest.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="26" selection-start-line="1" selection-start-column="26" selection-end-line="1" selection-end-column="26" />
+        <state relative-caret-position="37">
+          <caret line="36" column="75" lean-forward="true" selection-start-line="36" selection-start-column="75" selection-end-line="36" selection-end-column="75" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/android/app/src/main/kotlin/com/rsa/khatam_quran/MainActivity.kt">
+    <entry file="file://$PROJECT_DIR$/lib/ui/page_addlist.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-612">
+          <folding>
+            <element signature="e#0#20#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/ui/page_task.dart">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
-          <caret line="5" column="51" lean-forward="true" selection-start-line="5" selection-start-column="51" selection-end-line="5" selection-end-column="51" />
+          <caret line="90" column="14" lean-forward="true" selection-start-line="90" selection-start-column="14" selection-end-line="90" selection-end-column="14" />
           <folding>
-            <element signature="e#25#140#0" expanded="true" />
+            <element signature="e#0#54#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/utils/diamond_fab.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="142" column="11" selection-start-line="142" selection-start-column="11" selection-end-line="142" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/ui/page_done.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="23" column="27" selection-start-line="23" selection-start-column="27" selection-end-line="23" selection-end-column="27" />
+          <folding>
+            <element signature="e#0#54#0" expanded="true" />
           </folding>
         </state>
       </provider>
