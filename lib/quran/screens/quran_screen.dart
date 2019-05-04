@@ -7,6 +7,7 @@ import 'package:khatam_quran/quran/events/change_language_event.dart';
 import 'package:khatam_quran/quran/helpers/my_event_bus.dart';
 import 'package:khatam_quran/quran/localizations/app_localizations.dart';
 import 'package:khatam_quran/quran/screens/quran_list_screen.dart';
+import 'package:khatam_quran/quran/background/background.dart';
 
 class QuranScreen extends StatefulWidget {
   @override
@@ -88,7 +89,15 @@ class _QuranQuranScreenState extends State<QuranScreen>
 
   @override
   Widget build(BuildContext context) {
+    return Stack(
+      children: <Widget>[
+        Background().buildImageBackground(),
+        buildMain()
+      ],
+    );
+  }
 
+  Widget buildMain(){
     var tabBarChildrens = <Widget>[
       Container(
         height: 50,
@@ -157,8 +166,8 @@ class _QuranQuranScreenState extends State<QuranScreen>
           children: <Widget>[
             loadedQuranListScreen == false
                 ? QuranListScreen(
-                    currentTabIndex: quranListCurrentTabIndex,
-                  )
+              currentTabIndex: quranListCurrentTabIndex,
+            )
                 : Container()
           ],
         ),

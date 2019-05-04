@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:khatam_quran/model/element.dart';
+import 'package:khatam_quran/quran/background/background.dart';
 import 'package:khatam_quran/ui/page_detail.dart';
 
 class DonePage extends StatefulWidget {
@@ -19,25 +20,44 @@ class _DonePageState extends State<DonePage>
     with SingleTickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: ListView(
-        children: <Widget>[
-          Padding(
-            padding: EdgeInsets.all(50),
-            child:
+
+    return Stack(
+      children: <Widget>[
+        Background().buildImageBackground(),
+        ListView(
+          children: <Widget>[
             buildTitle(),
+            buildAddTaskButton(),
+            buildList(),
+          ],
+        )
+      ],
+    );
+  }
+
+  Widget buildTitle() {
+    return Padding(
+      padding: EdgeInsets.all(50),
+      child:
+      Column(
+        children: <Widget>[
+          Align(
+            alignment: Alignment.centerLeft,
+            child: Text(
+              'Khatam Alquran',
+              style: new TextStyle(
+                  fontSize: 24.0, fontWeight: FontWeight.bold),
+            ),
           ),
-          buildAddTaskButton(),
           Padding(
-            padding: EdgeInsets.only(top: 50.0),
-            child: Container(
-              height: 360.0,
-              padding: EdgeInsets.only(bottom: 25.0),
-              child: NotificationListener<OverscrollIndicatorNotification>(
-                onNotification: (overscroll) {
-                  overscroll.disallowGlow();
-                },
-                child: buildList(),
+            padding: EdgeInsets.only(top: 5.0),
+            child: Align(
+              alignment: Alignment.centerLeft,
+              child: Text(
+                'Daftar Aktifitas Selesai',
+                style: new TextStyle(
+                    color: Color(4283326968),
+                    fontSize: 18.0, fontWeight: FontWeight.bold),
               ),
             ),
           ),
@@ -46,34 +66,23 @@ class _DonePageState extends State<DonePage>
     );
   }
 
-  Widget buildTitle() {
-    return Column(
-      children: <Widget>[
-        Align(
-          alignment: Alignment.centerLeft,
-          child: Text(
-            'Khatam Alquran',
-            style: new TextStyle(
-                fontSize: 24.0, fontWeight: FontWeight.bold),
-          ),
+  Widget buildList() {
+    return Padding(
+      padding: EdgeInsets.only(top: 50.0),
+      child: Container(
+        height: 360.0,
+        padding: EdgeInsets.only(bottom: 25.0),
+        child: NotificationListener<OverscrollIndicatorNotification>(
+          onNotification: (overscroll) {
+            overscroll.disallowGlow();
+          },
+          child: buildActualList(),
         ),
-        Padding(
-          padding: EdgeInsets.only(top: 5.0),
-          child: Align(
-            alignment: Alignment.centerLeft,
-            child: Text(
-              'Daftar Aktifitas Selesai',
-              style: new TextStyle(
-                  color: Color(4283326968),
-                  fontSize: 18.0, fontWeight: FontWeight.bold),
-            ),
-          ),
-        ),
-      ],
+      ),
     );
   }
 
-  Widget buildList() {
+  Widget buildActualList(){
     return new StreamBuilder<QuerySnapshot>(
         stream: Firestore.instance
             .collection(widget.user.uid).orderBy("date", descending: true)

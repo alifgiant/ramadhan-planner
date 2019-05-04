@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:khatam_quran/model/element.dart';
+import 'package:khatam_quran/quran/background/background.dart';
+import 'package:khatam_quran/quran/screens/quran_screen.dart';
 import 'package:khatam_quran/ui/page_detail.dart';
 
 import 'page_addlist.dart';
@@ -41,32 +43,39 @@ class _TaskPageState extends State<TaskPage>
       }
     });
 
-    return Scaffold(
-      body: ListView(
-        children: <Widget>[
-          Padding(
-            padding: EdgeInsets.only(top: 50,left: 50),
-            child:
-            new Row(
-              mainAxisSize: MainAxisSize.max,
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: <Widget>[
-                new Expanded(
-                  flex: 1,
-                  child: buildTitle(),
-                ),
-                new Expanded(
-                    flex: 1,
-                    child: buildAddTaskButton()
-                ),
-              ],
+    return Stack(
+      children: <Widget>[
+        Background().buildImageBackground(),
+        ListView(
+          children: <Widget>[
+            buildHeader(),
+            Container(
+              height: 120,
             ),
+            buildList(),
+          ],
+        ),
+      ],
+    );
+  }
+
+  Widget buildHeader() {
+    return Padding(
+      padding: EdgeInsets.only(top: 50, left: 50),
+      child:
+      new Row(
+        mainAxisSize: MainAxisSize.max,
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: <Widget>[
+          new Expanded(
+            flex: 1,
+            child: buildTitle(),
           ),
-          Container(
-            height: 120,
+          new Expanded(
+              flex: 1,
+              child: buildAddTaskButton()
           ),
-          buildList(),
         ],
       ),
     );
