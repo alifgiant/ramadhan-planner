@@ -5,6 +5,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_colorpicker/flutter_colorpicker.dart';
+import 'package:khatam_quran/quran/background/background.dart';
 import 'package:modal_progress_hud/modal_progress_hud.dart';
 
 import 'package:connectivity/connectivity.dart';
@@ -119,145 +120,117 @@ class _NewTaskPageState extends State<NewTaskPage> {
           child: new Stack(
             children: <Widget>[
               _getToolbar(context),
-              Container(
-                child: Column(
-                  children: <Widget>[
-                    Padding(
-                      padding: EdgeInsets.only(top: 100.0),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: <Widget>[
-                          Expanded(
-                            flex: 1,
-                            child: Container(
-                              color: Colors.grey,
-                              height: 1.5,
-                            ),
-                          ),
-                          Expanded(
-                              flex: 2,
-                              child: new Row(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: <Widget>[
-                                  Text(
-                                    'Aktifitas',
-                                    style: new TextStyle(
-                                        fontSize: 30.0,
-                                        fontWeight: FontWeight.bold),
-                                  ),
-                                  Text(
-                                    ' baru',
-                                    style: new TextStyle(
-                                        fontSize: 28.0, color: Colors.grey),
-                                  )
-                                ],
-                              )),
-                          Expanded(
-                            flex: 1,
-                            child: Container(
-                              color: Colors.grey,
-                              height: 1.5,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                    Padding(
-                      padding:
-                          EdgeInsets.only(top: 50.0, left: 20.0, right: 20.0),
-                      child: new Column(
-                        children: <Widget>[
-                          new TextFormField(
-                            decoration: InputDecoration(
-                                border: new OutlineInputBorder(
-                                    borderSide:
-                                        new BorderSide(color: Colors.teal)),
-                                labelText: "Nama",
-                                contentPadding: EdgeInsets.only(
-                                    left: 16.0,
-                                    top: 20.0,
-                                    right: 16.0,
-                                    bottom: 5.0)),
-                            controller: listNameController,
-                            autofocus: true,
-                            style: TextStyle(
-                              fontSize: 22.0,
-                              color: Colors.black,
-                              fontWeight: FontWeight.w500,
-                            ),
-                            keyboardType: TextInputType.text,
-                            textCapitalization: TextCapitalization.sentences,
-                            maxLength: 20,
-                          ),
-                          new Padding(
-                            padding: EdgeInsets.only(bottom: 10.0),
-                          ),
-                          ButtonTheme(
-                            minWidth: double.infinity,
-                            child: RaisedButton(
-                              elevation: 3.0,
-                              onPressed: () {
-                                pickerColor = currentColor;
-                                showDialog(
-                                  context: context,
-                                  builder: (BuildContext context) {
-                                    return AlertDialog(
-                                      title: const Text('Pick a color!'),
-                                      content: SingleChildScrollView(
-                                        child: ColorPicker(
-                                          pickerColor: pickerColor,
-                                          onColorChanged: changeColor,
-                                          enableLabel: true,
-                                          colorPickerWidth: 1000.0,
-                                          pickerAreaHeightPercent: 0.7,
-                                        ),
-                                      ),
-                                      actions: <Widget>[
-                                        FlatButton(
-                                          child: Text('Got it'),
-                                          onPressed: () {
-                                            setState(() =>
-                                                currentColor = pickerColor);
-                                            Navigator.of(context).pop();
-                                          },
-                                        ),
-                                      ],
-                                    );
-                                  },
-                                );
-                              },
-                              child: Text('Warna kartu'),
-                              color: currentColor,
-                              textColor: const Color(0xffffffff),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                    Padding(
-                      padding: EdgeInsets.only(top: 20.0),
-                      child: new Column(
-                        children: <Widget>[
-                          new RaisedButton(
-                            child: const Text(
-                              'Tambah',
-                              style: TextStyle(color: Colors.white),
-                            ),
-                            color: Colors.blue,
-                            elevation: 4.0,
-                            splashColor: Colors.deepPurple,
-                            onPressed: addToFirebase,
-                          ),
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
-              ),
+              Background().buildImageBackground(),
+              buildBody()
             ],
           ),
           inAsyncCall: _saving),
+    );
+  }
+
+  Widget buildBody(){
+    return  Container(
+      child: Column(
+        children: <Widget>[
+          Container(
+            padding: EdgeInsets.only(top: 130, left: 20),
+            alignment: Alignment.topLeft,
+              child: Text('Target baru',
+                  style: TextStyle(fontSize: 26, fontWeight: FontWeight.bold))
+          ),
+          Padding(
+            padding:
+            EdgeInsets.only(top: 25.0, left: 20.0, right: 20.0),
+            child: new Column(
+              children: <Widget>[
+                new TextFormField(
+                  decoration: InputDecoration(
+                      border: new OutlineInputBorder(
+                          borderSide:
+                          new BorderSide(color: Colors.teal)),
+                      hintText: "Tulis nama target baru",
+                      labelText: "Nama",
+                      contentPadding: EdgeInsets.only(
+                          left: 16.0,
+                          top: 20.0,
+                          right: 16.0,
+                          bottom: 5.0)),
+                  controller: listNameController,
+                  autofocus: true,
+                  style: TextStyle(
+                    fontSize: 22.0,
+                    color: Colors.black,
+                    fontWeight: FontWeight.w500,
+                  ),
+                  keyboardType: TextInputType.text,
+                  textCapitalization: TextCapitalization.sentences,
+                  maxLength: 20,
+                ),
+                Container(
+                  width: double.infinity,
+                  alignment: Alignment.topLeft,
+                  child: RaisedButton(
+                    elevation: 3.0,
+                    onPressed: () {
+                      pickerColor = currentColor;
+                      showDialog(
+                        context: context,
+                        builder: (BuildContext context) {
+                          return AlertDialog(
+                            title: const Text('Pick a color!'),
+                            content: SingleChildScrollView(
+                              child: ColorPicker(
+                                pickerColor: pickerColor,
+                                onColorChanged: changeColor,
+                                enableLabel: true,
+                                colorPickerWidth: 1000.0,
+                                pickerAreaHeightPercent: 0.7,
+                              ),
+                            ),
+                            actions: <Widget>[
+                              FlatButton(
+                                child: Text('Got it'),
+                                onPressed: () {
+                                  setState(() =>
+                                  currentColor = pickerColor);
+                                  Navigator.of(context).pop();
+                                },
+                              ),
+                            ],
+                          );
+                        },
+                      );
+                    },
+                    child: Text('Ganti warna target'),
+                    color: currentColor,
+                    textColor: const Color(0xffffffff),
+                  ),
+                )
+              ],
+            ),
+          ),
+          Padding(
+            padding: EdgeInsets.only(top: 10.0, left: 20,right: 20),
+            child: new Column(
+              children: <Widget>[
+                ButtonTheme(
+                  minWidth: double.infinity,
+                  child: new RaisedButton(
+                    child: const Text(
+                      'Tambahkan',
+                      style: TextStyle(color: Colors.white),
+                    ),
+                    color: Colors.blue,
+                    elevation: 4.0,
+                    splashColor: Colors.deepPurple,
+                    onPressed: addToFirebase,
+                  ),
+                )
+              ],
+            ),
+          ),
+        ],
+      ),
     );
   }
 

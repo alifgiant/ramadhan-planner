@@ -98,7 +98,7 @@ class _TaskPageState extends State<TaskPage>
             Padding(
                 padding: EdgeInsets.only(top: 5),
                 child: Text(
-                  'Daftar aktifitas',
+                  'Daftar Aktifitas',
                   style: new TextStyle(
                       color: Color(4283326968),
                       fontSize: 18.0, fontWeight: FontWeight.bold),
