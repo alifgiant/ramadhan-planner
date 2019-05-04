@@ -3,11 +3,11 @@ import 'dart:async';
 import 'package:bubble_tab_indicator/bubble_tab_indicator.dart';
 import 'package:flutter/material.dart';
 import 'package:function_types/function_types.dart';
+import 'package:khatam_quran/quran/background/background.dart';
 import 'package:khatam_quran/quran/events/change_language_event.dart';
 import 'package:khatam_quran/quran/helpers/my_event_bus.dart';
 import 'package:khatam_quran/quran/localizations/app_localizations.dart';
 import 'package:khatam_quran/quran/screens/quran_list_screen.dart';
-import 'package:khatam_quran/quran/background/background.dart';
 
 class QuranScreen extends StatefulWidget {
   @override
@@ -165,8 +165,11 @@ class _QuranQuranScreenState extends State<QuranScreen>
           controller: tabController,
           children: <Widget>[
             loadedQuranListScreen == false
-                ? QuranListScreen(
-              currentTabIndex: quranListCurrentTabIndex,
+                ? Container(
+              color: Color(	4294572537),
+              child: QuranListScreen(
+                currentTabIndex: quranListCurrentTabIndex,
+              ),
             )
                 : Container()
           ],

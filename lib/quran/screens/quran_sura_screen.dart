@@ -7,9 +7,6 @@ import 'package:khatam_quran/quran/models/quran_data_model.dart';
 import 'package:khatam_quran/quran/screens/quran_aya_screen.dart';
 import 'package:khatam_quran/quran/services/quran_data_services.dart';
 import 'package:scoped_model/scoped_model.dart';
-import 'package:bubble_tab_indicator/bubble_tab_indicator.dart';
-import 'dart:math' as math;
-import 'package:loadmore/loadmore.dart';
 
 class QuranSuraScreen extends StatefulWidget {
   @override
