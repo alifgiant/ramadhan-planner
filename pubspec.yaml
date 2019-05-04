@@ -87,8 +87,7 @@ flutter:
   - assets/quran-data/translations.db
   - assets/images/
   - assets/appicon/
-  - assets/logo.png
-  - assets/list.png
+
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.io/assets-and-images/#resolution-aware.
 

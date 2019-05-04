@@ -192,7 +192,7 @@ Widget buildTitle() {
         child: Align(
           alignment: Alignment.centerLeft,
           child: Text(
-            'Daftar Aktifitas Selesai',
+            'Al Quran Digital',
             style: new TextStyle(
                 color: Color(4283326968),
                 fontSize: 18.0, fontWeight: FontWeight.bold),
