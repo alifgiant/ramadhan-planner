@@ -35,7 +35,7 @@ class _DetailPageState extends State<DetailPage> {
           _buildBody(),
         ],
       ),
-      floatingActionButton: buildFab(),
+      floatingActionButton: buildAddTaskButton(),
     );
   }
 
@@ -47,73 +47,86 @@ class _DetailPageState extends State<DetailPage> {
     );
   }
 
-  Widget buildFab(){
-    return DiamondFab(
-      onPressed: () {
-        showDialog(
-          context: context,
-          builder: (BuildContext context) {
-            return AlertDialog(
-              content: Row(
-                children: <Widget>[
-                  Expanded(
-                    child: new TextField(
-                      autofocus: true,
-                      decoration: InputDecoration(
-                          border: new OutlineInputBorder(
-                              borderSide: new BorderSide(
-                                  color: currentColor)),
-                          labelText: "Item",
-                          hintText: "Item",
-                          contentPadding: EdgeInsets.only(
-                              left: 16.0,
-                              top: 20.0,
-                              right: 16.0,
-                              bottom: 5.0)),
-                      controller: itemController,
-                      style: TextStyle(
-                        fontSize: 22.0,
-                        color: Colors.black,
-                        fontWeight: FontWeight.w500,
-                      ),
-                      keyboardType: TextInputType.text,
-                      textCapitalization: TextCapitalization.sentences,
-                    ),
-                  )
-                ],
-              ),
-              actions: <Widget>[
-                ButtonTheme(
-                  //minWidth: double.infinity,
-                  child: RaisedButton(
-                    elevation: 3.0,
-                    onPressed: () {
-                      if (itemController.text.isNotEmpty &&
-                          !widget.currentList.values
-                              .contains(itemController.text.toString())) {
-                        Firestore.instance
-                            .collection(widget.user.uid)
-                            .document(
-                            widget.currentList.keys.elementAt(widget.i))
-                            .updateData(
-                            {itemController.text.toString(): false});
+  Widget buildAddTaskButton() {
+    return new Container(
+      alignment: Alignment.center,
+      width: 70.0,
+      height: 70.0,
+      decoration: new BoxDecoration(
+          color: Color(4283326968),
+          border: new Border.all(color: Color(4283326968)),
+          borderRadius: BorderRadius.all(Radius.circular(7.0))
+      ),
+      child: new IconButton(
+        icon: new Icon(Icons.add, color: Colors.white),
+        iconSize: 50.0,
+        onPressed: _addActivityPressed,
+      ),
+    );
+  }
 
-                        itemController.clear();
-                        Navigator.of(context).pop();
-                      }
-                    },
-                    child: Text('Add'),
-                    color: currentColor,
-                    textColor: const Color(0xffffffff),
+  void _addActivityPressed(){
+
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          content: Row(
+            children: <Widget>[
+              Expanded(
+                child: new TextField(
+                  autofocus: true,
+                  decoration: InputDecoration(
+                      border: new OutlineInputBorder(
+                          borderSide: new BorderSide(
+                              color: currentColor)),
+                      labelText: "Item",
+                      hintText: "Item",
+                      contentPadding: EdgeInsets.only(
+                          left: 16.0,
+                          top: 20.0,
+                          right: 16.0,
+                          bottom: 5.0)),
+                  controller: itemController,
+                  style: TextStyle(
+                    fontSize: 22.0,
+                    color: Colors.black,
+                    fontWeight: FontWeight.w500,
                   ),
-                )
-              ],
-            );
-          },
+                  keyboardType: TextInputType.text,
+                  textCapitalization: TextCapitalization.sentences,
+                ),
+              )
+            ],
+          ),
+          actions: <Widget>[
+            ButtonTheme(
+              //minWidth: double.infinity,
+              child: RaisedButton(
+                elevation: 3.0,
+                onPressed: () {
+                  if (itemController.text.isNotEmpty &&
+                      !widget.currentList.values
+                          .contains(itemController.text.toString())) {
+                    Firestore.instance
+                        .collection(widget.user.uid)
+                        .document(
+                        widget.currentList.keys.elementAt(widget.i))
+                        .updateData(
+                        {itemController.text.toString(): false});
+
+                    itemController.clear();
+                    Navigator.of(context).pop();
+                  }
+                },
+                child: Text('Add'),
+                color: currentColor,
+                textColor: const Color(0xffffffff),
+              ),
+            )
+          ],
         );
       },
-      child: Icon(Icons.add),
-      backgroundColor: currentColor,
     );
   }
 
