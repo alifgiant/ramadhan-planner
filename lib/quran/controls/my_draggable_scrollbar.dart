@@ -24,7 +24,7 @@ class MyDraggableScrollBar {
           onTap: () {},
           child: Container(
             height: height,
-            width: 14,
+            width: 6,
             color: backgroundColor,
           ),
         );
