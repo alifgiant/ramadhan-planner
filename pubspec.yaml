@@ -48,6 +48,7 @@ dev_dependencies:
     sdk: flutter
   firebase_analytics: ^2.0.3
   firebase_auth: ^0.8.2
+  firebase_messaging: ^4.0.0+4
   cloud_firestore: ^0.9.7
 
   flutter_local_notifications: ^0.7.0
@@ -115,4 +116,4 @@ flutter:
 flutter_icons:
   android: true
   ios: true
-  image_path: "assets/appicon/app_icon_hd.png"
+  image_path: "assets/appicon/app_icon.png"

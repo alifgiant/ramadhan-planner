@@ -5,6 +5,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:khatam_quran/service/firebasemessaging.dart';
 import 'package:kiwi/kiwi.dart' as kiwi;
 import 'package:path/path.dart';
 import 'package:scoped_model/scoped_model.dart';
@@ -94,12 +95,8 @@ class TaskistApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-//    return MaterialApp(
-//      debugShowCheckedModeBanner: false,
-//      title: "Taskist",
-//      home: new RootPage(auth: Auth()),
-//      theme: new ThemeData(primarySwatch: Colors.blue),
-//    );
+
+    FcmNotification().init();
 
     myAppModel = MyAppModel(
       locale: Locale(
