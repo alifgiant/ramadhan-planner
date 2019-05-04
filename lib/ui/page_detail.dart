@@ -30,104 +30,116 @@ class _DetailPageState extends State<DetailPage> {
       backgroundColor: Colors.white,
       body: new Stack(
         children: <Widget>[
+          _buildBackground(),
           _getToolbar(context),
-          Container(
-            child: NotificationListener<OverscrollIndicatorNotification>(
-              onNotification: (overscroll) {
-                overscroll.disallowGlow();
-              },
-              child: new StreamBuilder<QuerySnapshot>(
-                  stream: Firestore.instance
-                      .collection(widget.user.uid)
-                      .snapshots(),
-                  builder: (BuildContext context,
-                      AsyncSnapshot<QuerySnapshot> snapshot) {
-                    if (!snapshot.hasData)
-                      return new Center(
-                          child: CircularProgressIndicator(
-                        backgroundColor: currentColor,
-                      ));
-                    return new Container(
-                      child: getExpenseItems(snapshot),
-                    );
-                  }),
-            ),
-          ),
+          _buildBody(),
         ],
       ),
-      floatingActionButton: DiamondFab(
-        onPressed: () {
-          showDialog(
-            context: context,
-            builder: (BuildContext context) {
-              return AlertDialog(
-                content: Row(
-                  children: <Widget>[
-                    Expanded(
-                      child: new TextField(
-                        autofocus: true,
-                        decoration: InputDecoration(
-                            border: new OutlineInputBorder(
-                                borderSide: new BorderSide(
-                                    color: currentColor)),
-                            labelText: "Item",
-                            hintText: "Item",
-                            contentPadding: EdgeInsets.only(
-                                left: 16.0,
-                                top: 20.0,
-                                right: 16.0,
-                                bottom: 5.0)),
-                        controller: itemController,
-                        style: TextStyle(
-                          fontSize: 22.0,
-                          color: Colors.black,
-                          fontWeight: FontWeight.w500,
-                        ),
-                        keyboardType: TextInputType.text,
-                        textCapitalization: TextCapitalization.sentences,
-                      ),
-                    )
-                  ],
-                ),
-                actions: <Widget>[
-                  ButtonTheme(
-                    //minWidth: double.infinity,
-                    child: RaisedButton(
-                      elevation: 3.0,
-                      onPressed: () {
-                        if (itemController.text.isNotEmpty &&
-                            !widget.currentList.values
-                                .contains(itemController.text.toString())) {
-                          Firestore.instance
-                              .collection(widget.user.uid)
-                              .document(
-                                  widget.currentList.keys.elementAt(widget.i))
-                              .updateData(
-                                  {itemController.text.toString(): false});
-
-                          itemController.clear();
-                          Navigator.of(context).pop();
-                        }
-                      },
-                      child: Text('Add'),
-                      color: currentColor,
-                      textColor: const Color(0xffffffff),
-                    ),
-                  )
-                ],
-              );
-            },
-          );
-        },
-        child: Icon(Icons.add),
-        backgroundColor: currentColor,
-      ),
+      floatingActionButton: buildFab(),
     );
   }
 
-  @override
-  void dispose() {
-    super.dispose();
+  Widget _buildBackground(){
+    return Container(
+      color: currentColor,
+      height: 250,
+      width: double.infinity,
+    );
+  }
+
+  Widget buildFab(){
+    return DiamondFab(
+      onPressed: () {
+        showDialog(
+          context: context,
+          builder: (BuildContext context) {
+            return AlertDialog(
+              content: Row(
+                children: <Widget>[
+                  Expanded(
+                    child: new TextField(
+                      autofocus: true,
+                      decoration: InputDecoration(
+                          border: new OutlineInputBorder(
+                              borderSide: new BorderSide(
+                                  color: currentColor)),
+                          labelText: "Item",
+                          hintText: "Item",
+                          contentPadding: EdgeInsets.only(
+                              left: 16.0,
+                              top: 20.0,
+                              right: 16.0,
+                              bottom: 5.0)),
+                      controller: itemController,
+                      style: TextStyle(
+                        fontSize: 22.0,
+                        color: Colors.black,
+                        fontWeight: FontWeight.w500,
+                      ),
+                      keyboardType: TextInputType.text,
+                      textCapitalization: TextCapitalization.sentences,
+                    ),
+                  )
+                ],
+              ),
+              actions: <Widget>[
+                ButtonTheme(
+                  //minWidth: double.infinity,
+                  child: RaisedButton(
+                    elevation: 3.0,
+                    onPressed: () {
+                      if (itemController.text.isNotEmpty &&
+                          !widget.currentList.values
+                              .contains(itemController.text.toString())) {
+                        Firestore.instance
+                            .collection(widget.user.uid)
+                            .document(
+                            widget.currentList.keys.elementAt(widget.i))
+                            .updateData(
+                            {itemController.text.toString(): false});
+
+                        itemController.clear();
+                        Navigator.of(context).pop();
+                      }
+                    },
+                    child: Text('Add'),
+                    color: currentColor,
+                    textColor: const Color(0xffffffff),
+                  ),
+                )
+              ],
+            );
+          },
+        );
+      },
+      child: Icon(Icons.add),
+      backgroundColor: currentColor,
+    );
+  }
+
+  Widget _buildBody(){
+    return Container(
+      child: NotificationListener<OverscrollIndicatorNotification>(
+        onNotification: (overscroll) {
+          overscroll.disallowGlow();
+        },
+        child: new StreamBuilder<QuerySnapshot>(
+            stream: Firestore.instance
+                .collection(widget.user.uid)
+                .snapshots(),
+            builder: (BuildContext context,
+                AsyncSnapshot<QuerySnapshot> snapshot) {
+              if (!snapshot.hasData)
+                return new Center(
+                    child: CircularProgressIndicator(
+                      backgroundColor: currentColor,
+                    ));
+              return new Container(
+                child: getExpenseItems(snapshot),
+              );
+            }),
+      ),
+    );
   }
 
   getExpenseItems(AsyncSnapshot<QuerySnapshot> snapshot) {
@@ -154,17 +166,18 @@ class _DetailPageState extends State<DetailPage> {
       return Column(
         children: <Widget>[
           Padding(
-            padding: EdgeInsets.only(top: 150.0),
+            padding: EdgeInsets.only(top: 120.0),
             child: new Column(
               children: <Widget>[
                 getTaskDetailDeleteTitle(),
-                getTaskDetailTitle(nbIsDone,listElement),
                 getTaskDetailLineSeparator(),
+                _buildColorChangerButton(),
+                getTaskDetailTitle(nbIsDone,listElement),
                 Padding(
-                  padding: EdgeInsets.only(top: 30.0),
+                  padding: EdgeInsets.only(top: 10.0),
                   child: Column(
                     children: <Widget>[
-                      Container(color: Color(0xFFFCFCFC),child:
+                      Container(color: Colors.white,child:
                       SizedBox(
                         height: MediaQuery.of(context).size.height - 350,
                         child: ListView.builder(
@@ -187,9 +200,7 @@ class _DetailPageState extends State<DetailPage> {
                                   },
                                   child: Container(
                                     height: 50.0,
-                                    color: ! listElement.elementAt(i).isDone
-                                        ? Color(0xFFF0F0F0)
-                                        : Color(0xFFFCFCFC),
+                                    color: Colors.white,
                                     child: Padding(
                                       padding: EdgeInsets.only(left: 50.0),
                                       child: Row(
@@ -285,76 +296,28 @@ class _DetailPageState extends State<DetailPage> {
 
   Padding _getToolbar(BuildContext context) {
     return new Padding(
-      padding: EdgeInsets.only(top: 50.0, left: 20.0, right: 12.0),
+      padding: EdgeInsets.only(top: 50.0, right: 20),
       child:
-          new Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
-            new Image(
-                width: 35.0,
-                height: 35.0,
-                fit: BoxFit.cover,
-                image: new AssetImage('assets/list.png')
-            ),
-        RaisedButton(
-          elevation: 3.0,
-          onPressed: () {
-            pickerColor = currentColor;
-            showDialog(
-              context: context,
-              builder: (BuildContext context) {
-                return AlertDialog(
-                  title: const Text('Pick a color!'),
-                  content: SingleChildScrollView(
-                    child: ColorPicker(
-                      pickerColor: pickerColor,
-                      onColorChanged: changeColor,
-                      enableLabel: true,
-                      colorPickerWidth: 1000.0,
-                      pickerAreaHeightPercent: 0.7,
-                    ),
-                  ),
-                  actions: <Widget>[
-                    FlatButton(
-                      child: Text('Got it'),
-                      onPressed: () {
-
-                        Firestore.instance
-                            .collection(widget.user.uid)
-                            .document(
-                            widget.currentList.keys.elementAt(widget.i))
-                            .updateData(
-                            {"color": pickerColor.value.toString()});
-
-                        setState(
-                                () => currentColor = pickerColor);
-                        Navigator.of(context).pop();
-                      },
-                    ),
-                  ],
-                );
+          Container(
+            alignment: Alignment.topRight,
+            width: double.infinity,
+            child: GestureDetector(
+              onTap: () {
+                Navigator.of(context).pop();
               },
-            );
-          },
-          child: Text('Color'),
-          color: currentColor,
-          textColor: const Color(0xffffffff),
-        ),
-        GestureDetector(
-          onTap: () {
-            Navigator.of(context).pop();
-          },
-          child: new Icon(
-            Icons.close,
-            size: 40.0,
-            color: currentColor,
-          ),
-        ),
-      ]),
+              child: new Icon(
+                Icons.close,
+                size: 40.0,
+                color: Colors.white,
+              ),
+            ),
+          )
     );
   }
 
   Widget getTaskDetailDeleteTitle() {
     return Padding(
-      padding: EdgeInsets.only(top: 5.0, left: 50.0, right: 20.0),
+      padding: EdgeInsets.only(top: 5.0, left: 50.0, right: 28.0),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: <Widget>[
@@ -365,7 +328,7 @@ class _DetailPageState extends State<DetailPage> {
               softWrap: true,
               overflow: TextOverflow.fade,
               style: TextStyle(
-                  fontWeight: FontWeight.bold, fontSize: 35.0),
+                  fontWeight: FontWeight.bold, fontSize: 35.0, color: Colors.white),
             ),
           ),
           GestureDetector(
@@ -416,7 +379,7 @@ class _DetailPageState extends State<DetailPage> {
             child: Icon(
               FontAwesomeIcons.trash,
               size: 25.0,
-              color: currentColor,
+              color: Colors.white,
             ),
           ),
         ],
@@ -424,9 +387,63 @@ class _DetailPageState extends State<DetailPage> {
     );
   }
 
+  Widget _buildColorChangerButton(){
+    return Container(
+      padding: EdgeInsets.only(left: 50, top: 10),
+      alignment: Alignment.topLeft,
+      child: RaisedButton(
+        shape: new RoundedRectangleBorder(
+            borderRadius: new BorderRadius.circular(10.0),
+            side: BorderSide(color: Colors.white, width: 2)),
+        child: Text('Ganti warna'),
+        color: currentColor,
+        textColor: const Color(0xffffffff),
+        elevation: 3.0,
+        onPressed: () {
+          pickerColor = currentColor;
+          showDialog(
+            context: context,
+            builder: (BuildContext context) {
+              return AlertDialog(
+                title: const Text('Pick a color!'),
+                content: SingleChildScrollView(
+                  child: ColorPicker(
+                    pickerColor: pickerColor,
+                    onColorChanged: changeColor,
+                    enableLabel: true,
+                    colorPickerWidth: 1000.0,
+                    pickerAreaHeightPercent: 0.7,
+                  ),
+                ),
+                actions: <Widget>[
+                  FlatButton(
+                    child: Text('Got it'),
+                    onPressed: () {
+
+                      Firestore.instance
+                          .collection(widget.user.uid)
+                          .document(
+                          widget.currentList.keys.elementAt(widget.i))
+                          .updateData(
+                          {"color": pickerColor.value.toString()});
+
+                      setState(
+                              () => currentColor = pickerColor);
+                      Navigator.of(context).pop();
+                    },
+                  ),
+                ],
+              );
+            },
+          );
+        },
+      ),
+    );
+  }
+
   Widget getTaskDetailTitle(int nbIsDone, List<ElementTask> listElement) {
     return Padding(
-      padding: EdgeInsets.only(top: 5.0, left: 50.0),
+      padding: EdgeInsets.only(top: 50.0, left: 50.0),
       child: Row(
         children: <Widget>[
           new Text(
@@ -434,7 +451,7 @@ class _DetailPageState extends State<DetailPage> {
                 " dari " +
                 listElement.length.toString() +
                 " aktifitas",
-            style: TextStyle(fontSize: 18.0, color: Colors.black54),
+            style: TextStyle(fontSize: 18.0, color: Colors.black),
           ),
         ],
       ),
@@ -450,7 +467,7 @@ class _DetailPageState extends State<DetailPage> {
             flex: 2,
             child: Container(
               margin: EdgeInsets.only(left: 50.0),
-              color: Colors.grey,
+              color: Colors.white,
               height: 1.5,
             ),
           ),
