@@ -59,6 +59,8 @@ class _LoginSignUpPageState extends State<LoginSignupPage> {
           shrinkWrap: true,
           children: <Widget>[
             _showLogo(),
+            _showAppTitle(),
+            _showSubtitle(),
             _showEmailInput(),
             _showPasswordInput(),
             _showErrorMessage(),
@@ -67,6 +69,24 @@ class _LoginSignUpPageState extends State<LoginSignupPage> {
           ],
         ),
       ),
+    );
+  }
+
+  Widget _showAppTitle() {
+    return new Container(
+      padding: EdgeInsets.only(top: 10),
+      alignment: Alignment.center,
+      child: new Text("Khatam Alquran",
+      style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),),
+    );
+  }
+
+  Widget _showSubtitle(){
+    return new Container(
+      padding: EdgeInsets.only(top: 5),
+      alignment: Alignment.center,
+      child: new Text("Masuk aplikasi",
+        style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Color(4283326968)),),
     );
   }
 
@@ -80,7 +100,7 @@ class _LoginSignUpPageState extends State<LoginSignupPage> {
 
   Widget _showEmailInput() {
     return Padding(
-      padding: EdgeInsets.only(top: 100.0),
+      padding: EdgeInsets.only(top: 50.0),
       child: new TextFormField(
         maxLines: 1,
         keyboardType: TextInputType.emailAddress,
@@ -127,7 +147,7 @@ class _LoginSignUpPageState extends State<LoginSignupPage> {
           elevation: 5.0,
           minWidth: 200.0,
           height: 42.0,
-          color: Colors.blue,
+          color: Color(4283326968),
           child:
           buildPrimaryButtonText(),
           onPressed: _validateAndSubmit,
