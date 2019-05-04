@@ -6,6 +6,8 @@ abstract class BaseAuth{
   Future<FirebaseUser> getCurrentUser();
   Future<void> sendEmailVerification();
   Future<bool> isEmailVerified();
+  Future<void> sendResetEmail(String email);
+
 }
 
 class Auth implements BaseAuth{
@@ -40,5 +42,9 @@ class Auth implements BaseAuth{
      return user.isEmailVerified;
    }
 
+   @override
+   Future<Function> sendResetEmail(String email) async{
+      await _firebaseAuth.sendPasswordResetEmail(email: email);
+   }
 
 }

@@ -1,6 +1,7 @@
-import 'package:flutter/material.dart';
-import 'package:khatam_quran/service/authentication.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/material.dart';
+import 'package:khatam_quran/quran/background/background.dart';
+import 'package:khatam_quran/service/authentication.dart';
 
 class LoginSignupPage extends StatefulWidget {
 
@@ -25,11 +26,12 @@ class _LoginSignUpPageState extends State<LoginSignupPage> {
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
-      appBar: new AppBar(
-        title: new Text("Login"),
-      ),
       body: Stack(
-        children: <Widget>[_showBody(), _showCircularProgress()],
+        children: <Widget>[
+          Background().buildImageBackground(),
+          _showBody(),
+          _showCircularProgress()
+        ],
       ),
     );
   }
@@ -42,7 +44,7 @@ class _LoginSignUpPageState extends State<LoginSignupPage> {
         child: CircleAvatar(
           backgroundColor: Colors.transparent,
           radius: 48.0,
-          child: Image.asset('assets/logo.png'),
+          child: Image.asset('assets/appicon/app_icon.png'),
         ),
       ),
     );
@@ -59,9 +61,9 @@ class _LoginSignUpPageState extends State<LoginSignupPage> {
             _showLogo(),
             _showEmailInput(),
             _showPasswordInput(),
+            _showErrorMessage(),
             _showPrimaryButton(),
             _showSecondaryButton(),
-            _showErrorMessage()
           ],
         ),
       ),
@@ -89,74 +91,101 @@ class _LoginSignUpPageState extends State<LoginSignupPage> {
               Icons.mail,
               color: Colors.grey,
             )),
-        validator: (value) => value.isEmpty ? 'Email can\'t be empty' : null,
+        validator: (value) => value.isEmpty ? 'Email tidak boleh kosong' : null,
         onSaved: (value) => _email = value,
       ),
     );
   }
 
   Widget _showPasswordInput() {
-    return Padding(
-      padding: EdgeInsets.only(top: 16.0),
-      child: new TextFormField(
-        maxLines: 1,
-        obscureText: true,
-        autofocus: false,
-        decoration: new InputDecoration(
-            hintText: 'Password',
-            icon: new Icon(
-              Icons.lock,
-              color: Colors.grey,
-            )),
-        validator: (value) => value.isEmpty ? 'Password can\'t be empty' : null,
-        onSaved: (value) => _password = value,
-      ),
-    );
+    if ( _formMode != FormMode.RESET ){
+      return Padding(
+        padding: EdgeInsets.only(top: 16.0),
+        child: new TextFormField(
+          maxLines: 1,
+          obscureText: true,
+          autofocus: false,
+          decoration: new InputDecoration(
+              hintText: 'Password',
+              icon: new Icon(
+                Icons.lock,
+                color: Colors.grey,
+              )),
+          validator: (value) => value.isEmpty ? 'Password tidak boleh kosong' : null,
+          onSaved: (value) => _password = value,
+        ),
+      );
+    } else {
+      return SizedBox.shrink();
+    }
   }
 
   Widget _showPrimaryButton() {
     return new Padding(
-        padding: EdgeInsets.only(top: 45.0),
+        padding: EdgeInsets.only(top: 25.0),
         child: new MaterialButton(
           elevation: 5.0,
           minWidth: 200.0,
           height: 42.0,
           color: Colors.blue,
-          child: _formMode == FormMode.LOGIN
-              ? new Text('Login',
-                  style: new TextStyle(fontSize: 20.0, color: Colors.white))
-              : new Text('Signup',
-                  style: new TextStyle(fontSize: 20.0, color: Colors.white)),
+          child:
+          buildPrimaryButtonText(),
           onPressed: _validateAndSubmit,
         ));
   }
 
-  _validateAndSubmit() async {
-    setState(() {
-      _errorMessage = "";
-      _isLoading = true;
-    });
+  Widget buildPrimaryButtonText() {
+    switch (_formMode) {
+      case (FormMode.LOGIN) :
+        return new Text('Masuk',
+            style: new TextStyle(fontSize: 20.0, color: Colors.white));
+        break;
+      case (FormMode.RESET) :
+        return new Text('Pulihkan',
+            style: new TextStyle(fontSize: 20.0, color: Colors.white));
+      default :
+        return new Text('Buat akun',
+            style: new TextStyle(fontSize: 20.0, color: Colors.white));
+    }
+  }
 
+  _validateAndSubmit() async {
     if (_validateAndSave()) {
+
+      setState(() {
+        _errorMessage = "";
+        _isLoading = true;
+      });
+
       String userID = "";
       try {
-        if (_formMode == FormMode.LOGIN) {
-          FirebaseUser user = await widget.auth.signIn(_email, _password);
-          userID = user.uid;
-          print('Signed in : $userID');
-          if ( userID != null && userID.isNotEmpty ){
-            widget.onSignIn(user);
-          }
-        } else {
-          userID  = await widget.auth.signUp(_email, _password);
-          widget.auth.sendEmailVerification();
-          print('Signed up : $userID');
-          _changeFormToLogin();
+
+        switch ( _formMode ){
+          case FormMode.LOGIN :
+            FirebaseUser user = await widget.auth.signIn(_email, _password);
+            userID = user.uid;
+            print('Signed in : $userID');
+            if ( userID != null && userID.isNotEmpty ){
+              widget.onSignIn(user);
+            }
+            break;
+          case FormMode.SIGNUP :
+            userID  = await widget.auth.signUp(_email, _password);
+            widget.auth.sendEmailVerification();
+            print('Signed up : $userID');
+            _changeFormToLogin();
+            break;
+          case FormMode.RESET :
+            await widget.auth.sendResetEmail(_email);
+            _showAlert(context, "Pemulihan berhasil", "Cek email anda untuk memulihkan password.");
+            _changeFormToLogin();
+            break;
         }
       } catch (e) {
         print('Error $e');
         setState(() {
           _isLoading = false;
+
           if ( _ios() ){
             _errorMessage = e.details;
           } else {
@@ -182,21 +211,32 @@ class _LoginSignUpPageState extends State<LoginSignupPage> {
   }
 
   Widget _showSecondaryButton() {
-    return new FlatButton(
-        child: _formMode == FormMode.LOGIN
-            ? new Text(
-                'Create an account',
-                style:
-                    new TextStyle(fontSize: 18.0, fontWeight: FontWeight.w300),
-              )
-            : new Text(
-                'Have an account ? Sign in',
-                style:
-                    new TextStyle(fontSize: 18.0, fontWeight: FontWeight.w300),
-              ),
-        onPressed: _formMode == FormMode.LOGIN
-            ? _changeFormToSignUp
-            : _changeFormToLogin);
+    return Column(
+      children: <Widget>[
+        new FlatButton(
+            child: _formMode == FormMode.LOGIN
+                ? new Text(
+              'Tidak punya akun ? Buat baru',
+              style:
+              new TextStyle(fontSize: 18.0, fontWeight: FontWeight.w300),
+            )
+                : new Text(
+              'Sudah punya akun ? Masuk',
+              style:
+              new TextStyle(fontSize: 18.0, fontWeight: FontWeight.w300),
+            ),
+            onPressed: _formMode == FormMode.LOGIN
+                ? _changeFormToSignUp
+                : _changeFormToLogin),
+        new FlatButton(
+            onPressed: _changeFormToForgotPassword,
+            child: new Text(
+                "Lupa password ?",
+                style: new TextStyle(
+                    fontSize: 18.0, fontWeight: FontWeight.w300))
+        )
+      ],
+    );
   }
 
   void _changeFormToSignUp() {
@@ -208,6 +248,7 @@ class _LoginSignUpPageState extends State<LoginSignupPage> {
   }
 
   void _changeFormToLogin() {
+    _isLoading = false;
     _formKey.currentState.reset();
     _errorMessage = "";
     setState(() {
@@ -215,20 +256,48 @@ class _LoginSignUpPageState extends State<LoginSignupPage> {
     });
   }
 
+  Future _showAlert(BuildContext context, String title, String content) async {
+    return showDialog(
+        context: context,
+        builder: (context){
+          return new AlertDialog(
+            title: new Text(title),
+            content: new Text(content),
+            actions: <Widget>[
+              new FlatButton(onPressed: () => Navigator.pop(context), child: new Text('Ok'))
+            ],
+          );
+        }
+    );
+  }
+
   Widget _showErrorMessage() {
     if (_errorMessage != null && _errorMessage.length > 0) {
-      return new Text(_errorMessage,
-          style: TextStyle(
-              fontSize: 13.0,
-              color: Colors.red,
-              height: 1.0,
-              fontWeight: FontWeight.w300));
+      return Container(
+        alignment: Alignment.topCenter,
+        padding: EdgeInsets.only(top: 50),
+        child: new Text(_errorMessage,
+            style: TextStyle(
+                fontSize: 16.0,
+                color: Colors.red,
+                height: 1.0,
+                fontWeight: FontWeight.bold)),
+      );
     } else {
       return new Container(
         height: 0.0,
       );
     }
   }
+
+  void _changeFormToForgotPassword() {
+    _formKey.currentState.reset();
+    _errorMessage = "";
+    setState(() {
+      _formMode = FormMode.RESET;
+    });
+  }
+
 }
 
-enum FormMode { LOGIN, SIGNUP }
+enum FormMode { LOGIN, SIGNUP, RESET }
