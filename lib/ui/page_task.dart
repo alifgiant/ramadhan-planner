@@ -110,19 +110,23 @@ class _TaskPageState extends State<TaskPage>
   Widget buildAddTaskButton() {
     return new Column(
       children: <Widget>[
-        new Container(
-          alignment: Alignment.centerRight,
-          width: 50.0,
-          height: 50.0,
-          decoration: new BoxDecoration(
-              color: Color(4283326968),
-              border: new Border.all(color: Color(4283326968)),
-              borderRadius: BorderRadius.all(Radius.circular(7.0))
-          ),
-          child: new IconButton(
-            icon: new Icon(Icons.add, color: Colors.white),
-            iconSize: 25.0,
-            onPressed: _addTaskPressed,
+        Container(
+          padding: EdgeInsets.only(right: 25),
+          alignment: Alignment.topRight,
+          child: new Container(
+            alignment: Alignment.centerRight,
+            width: 50.0,
+            height: 50.0,
+            decoration: new BoxDecoration(
+                color: Color(4283326968),
+                border: new Border.all(color: Color(4283326968)),
+                borderRadius: BorderRadius.all(Radius.circular(7.0))
+            ),
+            child: new IconButton(
+              icon: new Icon(Icons.add, color: Colors.white),
+              iconSize: 25.0,
+              onPressed: _addTaskPressed,
+            ),
           ),
         )
         ,

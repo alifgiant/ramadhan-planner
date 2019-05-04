@@ -10,9 +10,9 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d72d5de6-a713-4718-bcab-1e3972bee4f1" name="Default" comment="Change scroller width to 6">
-      <change beforePath="$PROJECT_DIR$/lib/quran/screens/quran_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/quran/screens/quran_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/quran/screens/quran_sura_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/quran/screens/quran_sura_screen.dart" afterDir="false" />
+    <list default="true" id="d72d5de6-a713-4718-bcab-1e3972bee4f1" name="Default" comment="Add background in surah">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/ui/page_task.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/ui/page_task.dart" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -22,11 +22,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/lib/ui/page_task.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
-              <caret line="30" column="8" selection-start-line="30" selection-start-column="8" selection-end-line="30" selection-end-column="45" />
+            <state relative-caret-position="200">
+              <caret line="116" column="45" lean-forward="true" selection-start-line="116" selection-start-column="45" selection-end-line="116" selection-end-column="45" />
               <folding>
                 <element signature="e#0#54#0" expanded="true" />
               </folding>
@@ -46,11 +46,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/quran/screens/quran_screen.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="96">
-              <caret line="159" column="16" lean-forward="true" selection-start-line="159" selection-start-column="16" selection-end-line="159" selection-end-column="16" />
+            <state relative-caret-position="147">
+              <caret line="162" column="10" lean-forward="true" selection-start-line="162" selection-start-column="10" selection-end-line="162" selection-end-column="10" />
               <folding>
                 <element signature="e#0#20#0" expanded="true" />
               </folding>
@@ -225,7 +225,6 @@
         <option value="$PROJECT_DIR$/android/app/src/main/res/values/colors.xml" />
         <option value="$PROJECT_DIR$/android/app/src/main/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/lib/ui/home_page.dart" />
-        <option value="$PROJECT_DIR$/lib/ui/page_task.dart" />
         <option value="$PROJECT_DIR$/lib/main.dart" />
         <option value="$PROJECT_DIR$/pubspec.yaml" />
         <option value="$PROJECT_DIR$/lib/quran/screens/quran_aya_screen.dart" />
@@ -233,6 +232,7 @@
         <option value="$PROJECT_DIR$/lib/ui/page_detail.dart" />
         <option value="$PROJECT_DIR$/lib/quran/screens/quran_sura_screen.dart" />
         <option value="$PROJECT_DIR$/lib/quran/screens/quran_screen.dart" />
+        <option value="$PROJECT_DIR$/lib/ui/page_task.dart" />
       </list>
     </option>
   </component>
@@ -608,7 +608,14 @@
       <option name="project" value="LOCAL" />
       <updated>1556994661627</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="Add background in surah">
+      <created>1556995333896</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1556995333896</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TodoView">
@@ -700,7 +707,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Change diamond button to circle" />
     <MESSAGE value="Change app name" />
     <MESSAGE value="Change project name &amp; id" />
     <MESSAGE value="redesign task done page" />
@@ -725,7 +731,8 @@
     <MESSAGE value="Fix wording in quran screen" />
     <MESSAGE value="Fix wording in task detail" />
     <MESSAGE value="Change scroller width to 6" />
-    <option name="LAST_COMMIT_MESSAGE" value="Change scroller width to 6" />
+    <MESSAGE value="Add background in surah" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add background in surah" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/lib/quran/localizations/app_localizations.dart">
@@ -981,16 +988,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/ui/page_task.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="30" column="8" selection-start-line="30" selection-start-column="8" selection-end-line="30" selection-end-column="45" />
-          <folding>
-            <element signature="e#0#54#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lib/main.dart">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="249">
@@ -1054,10 +1051,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/quran/screens/quran_screen.dart">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="159" column="16" lean-forward="true" selection-start-line="159" selection-start-column="16" selection-end-line="159" selection-end-column="16" />
+        <state relative-caret-position="147">
+          <caret line="162" column="10" lean-forward="true" selection-start-line="162" selection-start-column="10" selection-end-line="162" selection-end-column="10" />
           <folding>
             <element signature="e#0#20#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/ui/page_task.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="116" column="45" lean-forward="true" selection-start-line="116" selection-start-column="45" selection-end-line="116" selection-end-column="45" />
+          <folding>
+            <element signature="e#0#54#0" expanded="true" />
           </folding>
         </state>
       </provider>
