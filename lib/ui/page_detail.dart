@@ -80,8 +80,8 @@ class _DetailPageState extends State<DetailPage> {
                       border: new OutlineInputBorder(
                           borderSide: new BorderSide(
                               color: currentColor)),
-                      labelText: "Item",
-                      hintText: "Item",
+                      labelText: "Aktifitas Baru",
+                      hintText: "Nama aktifitas",
                       contentPadding: EdgeInsets.only(
                           left: 16.0,
                           top: 20.0,
@@ -100,29 +100,29 @@ class _DetailPageState extends State<DetailPage> {
             ],
           ),
           actions: <Widget>[
-            ButtonTheme(
-              //minWidth: double.infinity,
-              child: RaisedButton(
-                elevation: 3.0,
-                onPressed: () {
-                  if (itemController.text.isNotEmpty &&
-                      !widget.currentList.values
-                          .contains(itemController.text.toString())) {
-                    Firestore.instance
-                        .collection(widget.user.uid)
-                        .document(
-                        widget.currentList.keys.elementAt(widget.i))
-                        .updateData(
-                        {itemController.text.toString(): false});
+        Container(
+        width: double.infinity,
+          child: RaisedButton(
+          elevation: 3.0,
+          onPressed: () {
+            if (itemController.text.isNotEmpty &&
+                !widget.currentList.values
+                    .contains(itemController.text.toString())) {
+              Firestore.instance
+                  .collection(widget.user.uid)
+                  .document(
+                  widget.currentList.keys.elementAt(widget.i))
+                  .updateData(
+                  {itemController.text.toString(): false});
 
-                    itemController.clear();
-                    Navigator.of(context).pop();
-                  }
-                },
-                child: Text('Add'),
-                color: currentColor,
-                textColor: const Color(0xffffffff),
-              ),
+              itemController.clear();
+              Navigator.of(context).pop();
+            }
+          },
+          child: Text('Tambahkan'),
+          color: currentColor,
+          textColor: const Color(0xffffffff),
+        ),
             )
           ],
         );
