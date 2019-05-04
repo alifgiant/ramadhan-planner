@@ -5,7 +5,6 @@ import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:khatam_quran/model/element.dart';
 import 'package:khatam_quran/quran/background/background.dart';
-import 'package:khatam_quran/quran/screens/quran_screen.dart';
 import 'package:khatam_quran/ui/page_detail.dart';
 
 import 'page_addlist.dart';

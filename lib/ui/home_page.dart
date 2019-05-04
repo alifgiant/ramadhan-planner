@@ -1,15 +1,12 @@
 
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:khatam_quran/ui/page_done.dart';
-import 'package:khatam_quran/ui/page_settings.dart';
-import 'package:khatam_quran/ui/page_task.dart';
-import 'package:firebase_auth/firebase_auth.dart';
-import 'package:khatam_quran/service/authentication.dart';
-import 'package:khatam_quran/service/notification.dart';
 import 'package:khatam_quran/quran/screens/home_screen.dart';
-//import 'package:flutter_local_notifications/flutter_local_notifications.dart';
+import 'package:khatam_quran/service/authentication.dart';
+import 'package:khatam_quran/ui/page_done.dart';
+import 'package:khatam_quran/ui/page_task.dart';
 
 class HomePage extends StatefulWidget {
 
@@ -37,11 +34,6 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
   @override
   void initState() {
     super.initState();
-
-
-//    notification.init(notificationCallback);
-//    notification.showNotificationWithDefaultSound();
-
     _children = [
       DonePage(
         user: _currentUser,

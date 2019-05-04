@@ -2,27 +2,24 @@ import 'dart:async';
 import 'dart:convert';
 import 'dart:io';
 
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:khatam_quran/service/firebasemessaging.dart';
-import 'package:kiwi/kiwi.dart' as kiwi;
-import 'package:path/path.dart';
-import 'package:scoped_model/scoped_model.dart';
-import 'package:shared_preferences/shared_preferences.dart';
-import 'package:sqflite/sqflite.dart';
 import 'package:khatam_quran/quran/app_settings.dart';
 import 'package:khatam_quran/quran/helpers/settings_helpers.dart';
 import 'package:khatam_quran/quran/localizations/app_localizations.dart';
 import 'package:khatam_quran/quran/models/theme_model.dart';
-import 'package:khatam_quran/quran/routes/routes.dart';
-import 'package:khatam_quran/quran/screens/main_drawer.dart';
 import 'package:khatam_quran/quran/services/bookmarks_data_service.dart';
 import 'package:khatam_quran/quran/services/database_file_service.dart';
 import 'package:khatam_quran/quran/services/quran_data_services.dart';
 import 'package:khatam_quran/quran/services/translations_list_service.dart';
 import 'package:khatam_quran/service/authentication.dart';
+import 'package:khatam_quran/service/firebasemessaging.dart';
 import 'package:khatam_quran/ui/root_page.dart';
+import 'package:kiwi/kiwi.dart' as kiwi;
+import 'package:scoped_model/scoped_model.dart';
+import 'package:sqflite/sqflite.dart';
 
 Future<Null> main() async {
   // Load secrets file, ignore if the secrets.json is not exists
@@ -97,6 +94,7 @@ class TaskistApp extends StatelessWidget {
   Widget build(BuildContext context) {
 
     FcmNotification().init();
+    Firestore.instance.collection("base");
 
     myAppModel = MyAppModel(
       locale: Locale(

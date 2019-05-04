@@ -219,13 +219,6 @@
             </list>
           </value>
         </entry>
-        <entry key="flutter_local_notifications">
-          <value>
-            <list>
-              <option value="D:/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_local_notifications-0.7.0/lib" />
-            </list>
-          </value>
-        </entry>
         <entry key="flutter_localizations">
           <value>
             <list>
@@ -630,7 +623,6 @@
       <root url="file://D:/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_hooks-0.3.0/lib" />
       <root url="file://D:/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_launcher_icons-0.7.0/lib" />
       <root url="file://D:/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_list_drag_and_drop-0.1.6/lib" />
-      <root url="file://D:/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_local_notifications-0.7.0/lib" />
       <root url="file://D:/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_picker-1.0.11/lib" />
       <root url="file://D:/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_slidable-0.4.9/lib" />
       <root url="file://D:/flutter/.pub-cache/hosted/pub.dartlang.org/font_awesome_flutter-8.4.0/lib" />
