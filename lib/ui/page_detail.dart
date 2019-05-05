@@ -81,7 +81,7 @@ class _DetailPageState extends State<DetailPage> {
                           borderSide: new BorderSide(
                               color: currentColor)),
                       labelText: "Aktifitas Baru",
-                      hintText: "Nama aktifitas",
+                      hintText: "Nama",
                       contentPadding: EdgeInsets.only(
                           left: 16.0,
                           top: 20.0,
@@ -100,29 +100,29 @@ class _DetailPageState extends State<DetailPage> {
             ],
           ),
           actions: <Widget>[
-        Container(
-        width: double.infinity,
-          child: RaisedButton(
-          elevation: 3.0,
-          onPressed: () {
-            if (itemController.text.isNotEmpty &&
-                !widget.currentList.values
-                    .contains(itemController.text.toString())) {
-              Firestore.instance
-                  .collection(widget.user.uid)
-                  .document(
-                  widget.currentList.keys.elementAt(widget.i))
-                  .updateData(
-                  {itemController.text.toString(): false});
+            Padding(
+              padding: EdgeInsets.only(right: 20),
+              child: RaisedButton(
+                elevation: 3.0,
+                onPressed: () {
+                  if (itemController.text.isNotEmpty &&
+                      !widget.currentList.values
+                          .contains(itemController.text.toString())) {
+                    Firestore.instance
+                        .collection(widget.user.uid)
+                        .document(
+                        widget.currentList.keys.elementAt(widget.i))
+                        .updateData(
+                        {itemController.text.toString(): false});
 
-              itemController.clear();
-              Navigator.of(context).pop();
-            }
-          },
-          child: Text('Tambahkan'),
-          color: currentColor,
-          textColor: const Color(0xffffffff),
-        ),
+                    itemController.clear();
+                    Navigator.of(context).pop();
+                  }
+                },
+                child: Text('Tambahkan'),
+                color: currentColor,
+                textColor: const Color(0xffffffff),
+              ),
             )
           ],
         );

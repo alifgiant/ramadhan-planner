@@ -157,14 +157,14 @@ class _LoginSignUpPageState extends State<LoginSignupPage> {
   Widget buildPrimaryButtonText() {
     switch (_formMode) {
       case (FormMode.LOGIN) :
-        return new Text('Masuk',
+        return new Text('Masuk Aplikasi',
             style: new TextStyle(fontSize: 20.0, color: Colors.white));
         break;
       case (FormMode.RESET) :
-        return new Text('Pulihkan',
+        return new Text('Pulihkan Password',
             style: new TextStyle(fontSize: 20.0, color: Colors.white));
       default :
-        return new Text('Buat akun',
+        return new Text('Registrasi Akun Baru',
             style: new TextStyle(fontSize: 20.0, color: Colors.white));
     }
   }

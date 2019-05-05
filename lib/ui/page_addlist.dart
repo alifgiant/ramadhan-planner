@@ -177,7 +177,7 @@ class _NewTaskPageState extends State<NewTaskPage> {
                         context: context,
                         builder: (BuildContext context) {
                           return AlertDialog(
-                            title: const Text('Pick a color!'),
+                            title: const Text('Pilih warna!'),
                             content: SingleChildScrollView(
                               child: ColorPicker(
                                 pickerColor: pickerColor,
@@ -189,7 +189,7 @@ class _NewTaskPageState extends State<NewTaskPage> {
                             ),
                             actions: <Widget>[
                               FlatButton(
-                                child: Text('Got it'),
+                                child: Text('Ok'),
                                 onPressed: () {
                                   setState(() =>
                                   currentColor = pickerColor);
