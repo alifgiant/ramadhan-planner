@@ -17,6 +17,7 @@ class LoginSignupPage extends StatefulWidget {
 class _LoginSignUpPageState extends State<LoginSignupPage> {
   final _formKey = new GlobalKey<FormState>();
 
+  double horizontalPadding = 20.0;
   bool _isLoading = false;
   String _email;
   String _password;
@@ -52,7 +53,8 @@ class _LoginSignUpPageState extends State<LoginSignupPage> {
 
   Widget _showBody() {
     return new Container(
-      padding: EdgeInsets.all(16.0),
+      height: double.infinity,
+      alignment: Alignment.bottomCenter,
       child: new Form(
         key: _formKey,
         child: new ListView(
@@ -61,11 +63,12 @@ class _LoginSignUpPageState extends State<LoginSignupPage> {
             _showLogo(),
             _showAppTitle(),
             _showSubtitle(),
+            _showErrorMessage(),
             _showEmailInput(),
             _showPasswordInput(),
-            _showErrorMessage(),
             _showPrimaryButton(),
             _showSecondaryButton(),
+            _showSkipLogin()
           ],
         ),
       ),
@@ -85,9 +88,21 @@ class _LoginSignUpPageState extends State<LoginSignupPage> {
     return new Container(
       padding: EdgeInsets.only(top: 5),
       alignment: Alignment.center,
-      child: new Text("Masuk aplikasi",
+      child: new Text(_getTitle(),
         style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Color(4283326968)),),
     );
+  }
+
+  String _getTitle() {
+    switch (_formMode) {
+      case (FormMode.LOGIN) :
+        return 'Masuk Aplikasi';
+        break;
+      case (FormMode.RESET) :
+        return 'Pulihkan Password';
+      default :
+        return 'Registrasi Akun Baru';
+    }
   }
 
   Widget _showCircularProgress() {
@@ -100,7 +115,7 @@ class _LoginSignUpPageState extends State<LoginSignupPage> {
 
   Widget _showEmailInput() {
     return Padding(
-      padding: EdgeInsets.only(top: 50.0),
+      padding: EdgeInsets.only(top: 50.0, left: horizontalPadding, right: horizontalPadding),
       child: new TextFormField(
         maxLines: 1,
         keyboardType: TextInputType.emailAddress,
@@ -120,7 +135,7 @@ class _LoginSignUpPageState extends State<LoginSignupPage> {
   Widget _showPasswordInput() {
     if ( _formMode != FormMode.RESET ){
       return Padding(
-        padding: EdgeInsets.only(top: 16.0),
+        padding: EdgeInsets.only(top: 16.0, left: horizontalPadding, right: horizontalPadding),
         child: new TextFormField(
           maxLines: 1,
           obscureText: true,
@@ -142,7 +157,7 @@ class _LoginSignUpPageState extends State<LoginSignupPage> {
 
   Widget _showPrimaryButton() {
     return new Padding(
-        padding: EdgeInsets.only(top: 25.0),
+        padding: EdgeInsets.only(top: 25.0, left: horizontalPadding, right: horizontalPadding),
         child: new MaterialButton(
           elevation: 5.0,
           minWidth: 200.0,
@@ -154,17 +169,36 @@ class _LoginSignUpPageState extends State<LoginSignupPage> {
         ));
   }
 
+  Widget _showSkipLogin() {
+    return Padding(
+      padding: EdgeInsets.only(top: 25),
+      child: new MaterialButton(
+        elevation: 5.0,
+        minWidth: 200.0,
+        height: 42.0,
+        color: Color(4292665342),
+        child:
+        Align(
+          alignment: Alignment.topRight,
+          child: new Text('Masuk aplikasi tanpa daftar >',
+              style: new TextStyle(fontSize: 20.0, color: Color(4283326968))),
+        ),
+        onPressed: _anonLogin,
+      ),
+    );
+  }
+
   Widget buildPrimaryButtonText() {
     switch (_formMode) {
       case (FormMode.LOGIN) :
-        return new Text('Masuk Aplikasi',
+        return new Text('Masuk',
             style: new TextStyle(fontSize: 20.0, color: Colors.white));
         break;
       case (FormMode.RESET) :
-        return new Text('Pulihkan Password',
+        return new Text('Kirim',
             style: new TextStyle(fontSize: 20.0, color: Colors.white));
       default :
-        return new Text('Registrasi Akun Baru',
+        return new Text('Buat akun',
             style: new TextStyle(fontSize: 20.0, color: Colors.white));
     }
   }
@@ -186,12 +220,19 @@ class _LoginSignUpPageState extends State<LoginSignupPage> {
             userID = user.uid;
             print('Signed in : $userID');
             if ( userID != null && userID.isNotEmpty ){
-              widget.onSignIn(user);
+              if (user.isEmailVerified) {
+                widget.onSignIn(user);
+              } else {
+                _showAlert(context, "Verifikasi email dibutuhkan",
+                    "Cek email untuk melakukan verifikasi");
+              }
             }
             break;
           case FormMode.SIGNUP :
-            userID  = await widget.auth.signUp(_email, _password);
+            await widget.auth.signUp(_email, _password);
             widget.auth.sendEmailVerification();
+            _showAlert(context, "Daftar berhasil",
+                "Cek email untuk melakukan verifikasi");
             print('Signed up : $userID');
             _changeFormToLogin();
             break;
@@ -254,9 +295,37 @@ class _LoginSignUpPageState extends State<LoginSignupPage> {
                 "Lupa password ?",
                 style: new TextStyle(
                     fontSize: 18.0, fontWeight: FontWeight.w300))
-        )
+        ),
       ],
     );
+  }
+
+  _anonLogin() async {
+    setState(() {
+      _errorMessage = "";
+      _isLoading = true;
+    });
+
+    String userID = "";
+    try {
+      FirebaseUser user = await widget.auth.signinAnon();
+      userID = user.uid;
+      print('Signed in : $userID');
+      if (userID != null && userID.isNotEmpty) {
+        widget.onSignIn(user);
+      }
+    } catch (e) {
+      print('Error $e');
+      setState(() {
+        _isLoading = false;
+
+        if (_ios()) {
+          _errorMessage = e.details;
+        } else {
+          _errorMessage = e.message;
+        }
+      });
+    }
   }
 
   void _changeFormToSignUp() {
@@ -295,7 +364,7 @@ class _LoginSignUpPageState extends State<LoginSignupPage> {
     if (_errorMessage != null && _errorMessage.length > 0) {
       return Container(
         alignment: Alignment.topCenter,
-        padding: EdgeInsets.only(top: 50),
+        padding: EdgeInsets.only(top: 25),
         child: new Text(_errorMessage,
             style: TextStyle(
                 fontSize: 16.0,

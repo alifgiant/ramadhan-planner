@@ -1,11 +1,18 @@
 import 'package:firebase_auth/firebase_auth.dart';
 
 abstract class BaseAuth{
+  Future<FirebaseUser> signinAnon();
+
   Future<FirebaseUser> signIn(String email, String password);
+
   Future<String> signUp(String email, String password);
+
   Future<FirebaseUser> getCurrentUser();
+
   Future<void> sendEmailVerification();
+
   Future<bool> isEmailVerified();
+
   Future<void> sendResetEmail(String email);
 
 }
@@ -13,7 +20,14 @@ abstract class BaseAuth{
 class Auth implements BaseAuth{
    final FirebaseAuth _firebaseAuth = FirebaseAuth.instance;
 
-  @override
+
+   @override
+   Future<FirebaseUser> signinAnon() async {
+     FirebaseUser firebaseUser = await _firebaseAuth.signInAnonymously();
+     return firebaseUser;
+   }
+
+   @override
   Future<FirebaseUser> signIn(String email, String password) async {
     FirebaseUser firebaseUser = await _firebaseAuth.signInWithEmailAndPassword(email: email, password: password);
     return firebaseUser;
