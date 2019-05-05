@@ -5,7 +5,6 @@ import 'package:flutter_colorpicker/flutter_colorpicker.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:khatam_quran/model/element.dart';
-import 'package:khatam_quran/utils/diamond_fab.dart';
 
 class DetailPage extends StatefulWidget {
   final FirebaseUser user;
@@ -212,10 +211,9 @@ class _DetailPageState extends State<DetailPage> {
                                     });
                                   },
                                   child: Container(
-                                    height: 50.0,
                                     color: Colors.white,
                                     child: Padding(
-                                      padding: EdgeInsets.only(left: 50.0),
+                                      padding: EdgeInsets.only(left: 50.0, top: 10, right: 20),
                                       child: Row(
                                         mainAxisAlignment:
                                             MainAxisAlignment.start,
@@ -238,8 +236,6 @@ class _DetailPageState extends State<DetailPage> {
                                           Flexible(
                                             child: Text(
                                               listElement.elementAt(i).name,
-                                              overflow: TextOverflow.ellipsis,
-                                              maxLines: 1,
                                               style: listElement
                                                       .elementAt(i)
                                                       .isDone
@@ -350,9 +346,9 @@ class _DetailPageState extends State<DetailPage> {
                 context: context,
                 builder: (BuildContext context) {
                   return new AlertDialog(
-                    title: Text("Delete: " + widget.currentList.keys.elementAt(widget.i).toString()),
+                    title: Text("Hapus: " + widget.currentList.keys.elementAt(widget.i).toString()),
                     content: Text(
-                      "Are you sure you want to delete this list?", style: TextStyle(fontWeight: FontWeight.w400),),
+                      "Kamu yakin ingin menghapus aktifitas ini ?", style: TextStyle(fontWeight: FontWeight.w400),),
                     actions: <Widget>[
                       ButtonTheme(
                         //minWidth: double.infinity,
@@ -361,7 +357,7 @@ class _DetailPageState extends State<DetailPage> {
                           onPressed: () {
                             Navigator.pop(context);
                           },
-                          child: Text('No'),
+                          child: Text('Tidak'),
                           color: currentColor,
                           textColor: const Color(0xffffffff),
                         ),
@@ -379,7 +375,7 @@ class _DetailPageState extends State<DetailPage> {
                             Navigator.pop(context);
                             Navigator.of(context).pop();
                           },
-                          child: Text('YES'),
+                          child: Text('Ya'),
                           color: currentColor,
                           textColor: const Color(0xffffffff),
                         ),
@@ -418,7 +414,7 @@ class _DetailPageState extends State<DetailPage> {
             context: context,
             builder: (BuildContext context) {
               return AlertDialog(
-                title: const Text('Pick a color!'),
+                title: const Text('Pilih warna!'),
                 content: SingleChildScrollView(
                   child: ColorPicker(
                     pickerColor: pickerColor,
@@ -430,7 +426,7 @@ class _DetailPageState extends State<DetailPage> {
                 ),
                 actions: <Widget>[
                   FlatButton(
-                    child: Text('Got it'),
+                    child: Text('Ok'),
                     onPressed: () {
 
                       Firestore.instance

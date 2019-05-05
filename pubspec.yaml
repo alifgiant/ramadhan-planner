@@ -1,7 +1,7 @@
 name: khatam_quran
 description: 30 Days Khatam Quran
 
-version: 1.0.11
+version: 1.0.0+12
 
 environment:
   sdk: ">=2.0.0-dev.68.0 <3.0.0"

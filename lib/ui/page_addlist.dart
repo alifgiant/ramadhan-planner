@@ -121,8 +121,8 @@ class _NewTaskPageState extends State<NewTaskPage> {
       body: ModalProgressHUD(
           child: new Stack(
             children: <Widget>[
-              _getToolbar(context),
               Background().buildImageBackground(),
+              _getToolbar(context),
               buildBody()
             ],
           ),

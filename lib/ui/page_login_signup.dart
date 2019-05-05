@@ -181,7 +181,7 @@ class _LoginSignUpPageState extends State<LoginSignupPage> {
         Align(
           alignment: Alignment.topRight,
           child: new Text('Masuk aplikasi tanpa daftar >',
-              style: new TextStyle(fontSize: 20.0, color: Color(4283326968))),
+              style: new TextStyle(fontSize: 18.0, color: Color(4283326968))),
         ),
         onPressed: _anonLogin,
       ),
