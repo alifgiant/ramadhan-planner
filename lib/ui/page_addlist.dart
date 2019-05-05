@@ -95,16 +95,18 @@ class _NewTaskPageState extends State<NewTaskPage> {
         pickerColor = Color(0xff6633ff);
         currentColor = Color(0xff6633ff);
 
+        showInSnackBar("Target baru berhasil terbuat");
+        
         Navigator.of(context).pop();
       }
       if (isExist == true) {
-        showInSnackBar("This list already exists");
+        showInSnackBar("Target sudah ada");
         setState(() {
           _saving = false;
         });
       }
       if (listNameController.text.isEmpty) {
-        showInSnackBar("Please enter a name");
+        showInSnackBar("Nama tidak boleh kosong");
         setState(() {
           _saving = false;
         });

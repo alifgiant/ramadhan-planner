@@ -89,11 +89,14 @@ class _DonePageState extends State<DonePage>
             .snapshots(),
         builder: (BuildContext context,
             AsyncSnapshot<QuerySnapshot> snapshot) {
+
           if (!snapshot.hasData)
-            return new Center(
-                child: CircularProgressIndicator(
-                  backgroundColor: Colors.blue,
-                ));
+            return _getLoading();
+
+          if (isEmpty(snapshot)) {
+            return _getEmpty();
+          }
+
           return new ListView(
             physics: const BouncingScrollPhysics(),
             padding: EdgeInsets.only(left: 40.0, right: 40.0),
@@ -101,6 +104,18 @@ class _DonePageState extends State<DonePage>
             children: getExpenseItems(snapshot),
           );
         });
+  }
+
+  bool isEmpty(AsyncSnapshot<QuerySnapshot> snapshot) {
+    List<ElementTask> listElement = new List();
+    snapshot.data.documents.map<List>((f) {
+      f.data.forEach((a, b) {
+        if (b.runtimeType == bool && b == true) {
+          listElement.add(new ElementTask(a, b));
+        }
+      });
+    }).toList();
+    return listElement.length == 0;
   }
 
   Widget buildAddTaskButton() {
@@ -322,18 +337,47 @@ class _DonePageState extends State<DonePage>
     }
   }
 
-  Padding _getToolbar(BuildContext context) {
+  Widget _getLoading() {
+    return new Center(
+        child: CircularProgressIndicator(
+          backgroundColor: Colors.blue,
+        ));
+  }
+
+  Widget _getEmpty() {
     return new Padding(
       padding: EdgeInsets.only(top: 50.0, left: 20.0, right: 20.0),
       child:
-      new Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-        new Image(
-            width: 40.0,
-            height: 40.0,
-            fit: BoxFit.cover,
-            image: new AssetImage('assets/list.png')
+      new Column(mainAxisAlignment: MainAxisAlignment.center, children: [
+        new Container(
+          height: 50,
+          alignment: Alignment.topCenter,
+          decoration: new BoxDecoration(
+            image: new DecorationImage(
+                image: new AssetImage("assets/images/quran.png"),
+                fit: BoxFit.contain
+            ),
+          ),
+          child: null /* add child content here */,
         ),
-      ]),
+        Padding(
+          padding: EdgeInsets.only(top: 10),
+          child: Align(
+            alignment: Alignment.topCenter,
+            child: new Text("Belum ada target yang tercapai",
+                style: TextStyle(fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.black)),
+          ),
+        ),
+        Padding(
+          padding: EdgeInsets.only(top: 10),
+          child: new Text("Cek target harianmu sekarang",
+              style: TextStyle(fontSize: 16,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.grey)),
+        ),
+      ])
     );
   }
 
