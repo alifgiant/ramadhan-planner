@@ -10,13 +10,10 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d72d5de6-a713-4718-bcab-1e3972bee4f1" name="Default" comment="Add login anonymously">
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
+    <list default="true" id="d72d5de6-a713-4718-bcab-1e3972bee4f1" name="Default" comment="Fix backpress in add task &amp; remove 1 line rule for detail task">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/android/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/ui/page_addlist.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/ui/page_addlist.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/ui/page_detail.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/ui/page_detail.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/ui/page_login_signup.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/ui/page_login_signup.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/quran/screens/quran_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/quran/screens/quran_screen.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
     </list>
     <ignored path="D:\Android Projects\Khatam_Alquran\.idea\shelf/" />
@@ -28,6 +25,27 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/android/app/build.gradle">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="110">
+              <caret line="30" selection-start-line="30" selection-end-line="30" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/lib/quran/screens/quran_screen.dart">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="185">
+              <caret line="45" column="42" lean-forward="true" selection-start-line="45" selection-start-column="42" selection-end-line="45" selection-end-column="42" />
+              <folding>
+                <element signature="e#0#20#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/ui/page_addlist.dart">
           <provider selected="true" editor-type-id="text-editor">
@@ -44,19 +62,37 @@
         <entry file="file://D:/flutter/packages/flutter/lib/src/material/icon_button.dart">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="127">
-              <caret line="242" column="8" lean-forward="true" selection-start-line="242" selection-start-column="8" selection-end-line="242" selection-end-column="20" />
+              <caret line="242" column="8" selection-start-line="242" selection-start-column="8" selection-end-line="242" selection-end-column="20" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/ui/page_detail.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="215" column="93" selection-start-line="215" selection-start-column="93" selection-end-line="215" selection-end-column="93" />
+            <state relative-caret-position="107">
+              <caret line="216" column="29" selection-start-line="216" selection-start-column="29" selection-end-line="216" selection-end-column="29" />
               <folding>
                 <element signature="e#0#54#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pubspec.yaml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="51">
+              <caret line="3" column="17" selection-start-line="3" selection-start-column="17" selection-end-line="3" selection-end-column="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://D:/flutter/packages/flutter/lib/src/material/tabs.dart">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="144">
+              <caret line="1249" column="28" selection-start-line="1249" selection-start-column="28" selection-end-line="1249" selection-end-column="28" />
             </state>
           </provider>
         </entry>
@@ -72,8 +108,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>aktifitas</find>
-      <find>add</find>
       <find>version</find>
       <find>Tambahkan</find>
       <find>C</find>
@@ -100,8 +134,10 @@
       <find>onPressed</find>
       <find>_getToolbar</find>
       <find>list</find>
-      <find>slid</find>
       <find>backbutt</find>
+      <find>slid</find>
+      <find>3</find>
+      <find>tab</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -152,15 +188,15 @@
         <option value="$PROJECT_DIR$/lib/quran/screens/quran_aya_screen.dart" />
         <option value="$PROJECT_DIR$/lib/quran/controls/my_draggable_scrollbar.dart" />
         <option value="$PROJECT_DIR$/lib/quran/screens/quran_sura_screen.dart" />
-        <option value="$PROJECT_DIR$/lib/quran/screens/quran_screen.dart" />
         <option value="$PROJECT_DIR$/lib/ui/page_task.dart" />
         <option value="$PROJECT_DIR$/lib/quran/background/background.dart" />
         <option value="$PROJECT_DIR$/lib/ui/page_done.dart" />
-        <option value="$PROJECT_DIR$/pubspec.yaml" />
-        <option value="$PROJECT_DIR$/android/app/build.gradle" />
         <option value="$PROJECT_DIR$/lib/ui/page_login_signup.dart" />
         <option value="$PROJECT_DIR$/lib/ui/page_addlist.dart" />
         <option value="$PROJECT_DIR$/lib/ui/page_detail.dart" />
+        <option value="$PROJECT_DIR$/pubspec.yaml" />
+        <option value="$PROJECT_DIR$/android/app/build.gradle" />
+        <option value="$PROJECT_DIR$/lib/quran/screens/quran_screen.dart" />
       </list>
     </option>
   </component>
@@ -220,36 +256,6 @@
               <item name="Khatam_Alquran" type="b2602c69:ProjectViewProjectNode" />
               <item name="Khatam_Alquran" type="462c0819:PsiDirectoryNode" />
               <item name="build" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Khatam_Alquran" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Khatam_Alquran" type="462c0819:PsiDirectoryNode" />
-              <item name="build" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Khatam_Alquran" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Khatam_Alquran" type="462c0819:PsiDirectoryNode" />
-              <item name="build" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="outputs" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Khatam_Alquran" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Khatam_Alquran" type="462c0819:PsiDirectoryNode" />
-              <item name="build" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="outputs" type="462c0819:PsiDirectoryNode" />
-              <item name="apk" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Khatam_Alquran" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Khatam_Alquran" type="462c0819:PsiDirectoryNode" />
-              <item name="build" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="outputs" type="462c0819:PsiDirectoryNode" />
-              <item name="apk" type="462c0819:PsiDirectoryNode" />
-              <item name="debug" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Khatam_Alquran" type="b2602c69:ProjectViewProjectNode" />
@@ -593,7 +599,14 @@
       <option name="project" value="LOCAL" />
       <updated>1557042310337</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="Fix backpress in add task &amp; remove 1 line rule for detail task">
+      <created>1557049299693</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1557049299693</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TodoView">
@@ -627,7 +640,7 @@
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3286119" />
       <window_info anchor="bottom" x="395" y="296" width="745" height="231" id="Event Log" order="7" sideWeight="0.50067115" side_tool="true" type="WINDOWED" weight="0.32765958" />
       <window_info anchor="bottom" id="Dart Analysis" order="8" sideWeight="0.4966443" weight="0.32719547" />
-      <window_info active="true" anchor="bottom" id="Version Control" order="9" sideWeight="0.49932885" visible="true" weight="0.24787535" />
+      <window_info active="true" anchor="bottom" id="Version Control" order="9" sideWeight="0.49932885" visible="true" weight="0.31303117" />
       <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49932885" weight="0.32152975" />
       <window_info anchor="bottom" x="23" y="296" width="1490" height="231" id="Messages" order="11" sideWeight="0.49932885" weight="0.46175638" />
       <window_info anchor="bottom" id="Flutter Performance" order="12" side_tool="true" />
@@ -685,7 +698,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="redesign task page" />
     <MESSAGE value="redesign task page again" />
     <MESSAGE value="redesign quran screen" />
     <MESSAGE value="add new color for bottom navigation" />
@@ -710,12 +722,10 @@
     <MESSAGE value="Fix add task button too left" />
     <MESSAGE value="Fix wording login &amp; new task button gone" />
     <MESSAGE value="Add login anonymously" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add login anonymously" />
+    <MESSAGE value="Fix backpress in add task &amp; remove 1 line rule for detail task" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix backpress in add task &amp; remove 1 line rule for detail task" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/lib/quran/app_settings.dart">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://D:/Flutter Projects/khatamquran/android/app/proguard-rules.pro">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
@@ -910,16 +920,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/quran/screens/quran_screen.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="162" column="10" selection-start-line="162" selection-start-column="10" selection-end-line="162" selection-end-column="10" />
-          <folding>
-            <element signature="e#0#20#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lib/ui/page_task.dart">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="234">
@@ -947,13 +947,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/android/app/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
-          <caret line="51" column="7" lean-forward="true" selection-start-line="51" selection-start-column="7" selection-end-line="51" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assets/images/quran.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
@@ -961,13 +954,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="8" column="58" selection-start-line="8" selection-start-column="58" selection-end-line="8" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pubspec.yaml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -1008,7 +994,7 @@
     <entry file="file://D:/flutter/packages/flutter/lib/src/material/icon_button.dart">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="127">
-          <caret line="242" column="8" lean-forward="true" selection-start-line="242" selection-start-column="8" selection-end-line="242" selection-end-column="20" />
+          <caret line="242" column="8" selection-start-line="242" selection-start-column="8" selection-end-line="242" selection-end-column="20" />
         </state>
       </provider>
     </entry>
@@ -1024,10 +1010,41 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/ui/page_detail.dart">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="215" column="93" selection-start-line="215" selection-start-column="93" selection-end-line="215" selection-end-column="93" />
+        <state relative-caret-position="107">
+          <caret line="216" column="29" selection-start-line="216" selection-start-column="29" selection-end-line="216" selection-end-column="29" />
           <folding>
             <element signature="e#0#54#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pubspec.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="17" selection-start-line="3" selection-start-column="17" selection-end-line="3" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/flutter/packages/flutter/lib/src/material/tabs.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="1249" column="28" selection-start-line="1249" selection-start-column="28" selection-end-line="1249" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/android/app/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="30" selection-start-line="30" selection-end-line="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/quran/screens/quran_screen.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="185">
+          <caret line="45" column="42" lean-forward="true" selection-start-line="45" selection-start-column="42" selection-end-line="45" selection-end-column="42" />
+          <folding>
+            <element signature="e#0#20#0" expanded="true" />
           </folding>
         </state>
       </provider>

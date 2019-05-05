@@ -34,7 +34,7 @@ class _QuranQuranScreenState extends State<QuranScreen>
   void initState() {
     tabController = TabController(
       vsync: this,
-      length: 3,
+      length: 1,
     );
     tabController.addListener(() {
       void c() {
