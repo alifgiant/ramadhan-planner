@@ -3,6 +3,7 @@ import 'package:google_sign_in/google_sign_in.dart';
 
 abstract class BaseAuth{
   Future<FirebaseUser> signInGoogle(Function onError);
+  Future<FirebaseUser> signinAnon();
 
   Future<FirebaseUser> signIn(String email, String password);
 
@@ -15,6 +16,7 @@ abstract class BaseAuth{
   Future<bool> isEmailVerified();
 
   Future<void> sendResetEmail(String email);
+
 }
 
 class Auth implements BaseAuth{
@@ -37,6 +39,11 @@ class Auth implements BaseAuth{
     )).catchError(onError);
   }
 
+  @override
+  Future<FirebaseUser> signinAnon() async {
+    FirebaseUser firebaseUser = await _firebaseAuth.signInAnonymously();
+    return firebaseUser;
+  }
 
   @override
   Future<FirebaseUser> signIn(String email, String password) async {
