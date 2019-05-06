@@ -60,6 +60,10 @@ class _LoginSignUpPageState extends State<LoginSignupPage> {
             _showLogo(),
             _showAppTitle(),
             _showSubtitle(),
+            Align(
+              alignment: Alignment.center,
+              child: Background().buildPrivacyPolicy(),
+            ),
             _showErrorMessage(),
             _showEmailInput(),
             _showPasswordInput(),

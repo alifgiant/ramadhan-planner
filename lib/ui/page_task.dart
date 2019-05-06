@@ -103,6 +103,10 @@ class _TaskPageState extends State<TaskPage>
                       fontSize: 18.0, fontWeight: FontWeight.bold),
                 ))
         ),
+        Align(
+          alignment: Alignment.centerLeft,
+          child: Background().buildPrivacyPolicy(),
+        )
       ],
     );
   }

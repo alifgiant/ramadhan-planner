@@ -61,6 +61,10 @@ class _DonePageState extends State<DonePage>
               ),
             ),
           ),
+          Align(
+            alignment: Alignment.centerLeft,
+            child: Background().buildPrivacyPolicy(),
+          )
         ],
       ),
     );

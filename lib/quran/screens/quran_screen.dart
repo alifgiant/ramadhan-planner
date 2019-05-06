@@ -202,6 +202,10 @@ Widget buildTitle() {
           ),
         ),
       ),
+      Align(
+        alignment: Alignment.centerLeft,
+        child: Background().buildPrivacyPolicy(),
+      )
     ],
   );
 }

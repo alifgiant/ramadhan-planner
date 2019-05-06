@@ -1,7 +1,7 @@
 name: khatam_quran
 description: 30 Days Khatam Quran
 
-version: 1.0.0+15
+version: 1.0.0+16
 
 environment:
   sdk: ">=2.0.0-dev.68.0 <3.0.0"
@@ -10,7 +10,7 @@ dependencies:
   flutter:
     sdk: flutter
 
-
+  url_launcher: ^5.0.2
   google_sign_in: ^4.0.1+3
   #    quran depedency
   flutter_localizations:
