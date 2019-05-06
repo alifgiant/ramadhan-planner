@@ -10,13 +10,8 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d72d5de6-a713-4718-bcab-1e3972bee4f1" name="Default" comment="Add google sign in method but revert from correct project">
+    <list default="true" id="d72d5de6-a713-4718-bcab-1e3972bee4f1" name="Default" comment="change color of icon notif">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/quran/background/background.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/quran/background/background.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/quran/screens/quran_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/quran/screens/quran_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/ui/page_done.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/ui/page_done.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/ui/page_login_signup.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/ui/page_login_signup.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/ui/page_task.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/ui/page_task.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
     </list>
     <ignored path="D:\Android Projects\Khatam_Alquran\.idea\shelf/" />
@@ -28,11 +23,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/android/app/build.gradle">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="46" column="33" selection-start-line="46" selection-start-column="33" selection-end-line="46" selection-end-column="33" />
+            <state relative-caret-position="133">
+              <caret line="48" column="31" selection-start-line="48" selection-start-column="31" selection-end-line="48" selection-end-column="31" />
             </state>
           </provider>
         </entry>
@@ -52,8 +47,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/android/app/src/main/AndroidManifest.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="101">
-              <caret line="46" column="69" selection-start-line="46" selection-start-column="69" selection-end-line="46" selection-end-column="69" />
+            <state relative-caret-position="141">
+              <caret line="25" selection-start-line="25" selection-end-line="25" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/android/app/src/main/res/drawable/ic_icon_notif.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="186">
+              <caret line="49" column="57" selection-start-line="49" selection-start-column="49" selection-end-line="49" selection-end-column="57" />
             </state>
           </provider>
         </entry>
@@ -106,36 +110,18 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/pubspec.yaml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="12" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="12" />
+            <state relative-caret-position="51">
+              <caret line="3" column="17" selection-start-line="3" selection-start-column="17" selection-end-line="3" selection-end-column="17" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/quran/screens/home_screen.dart">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <folding>
-                <element signature="e#0#39#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/main.dart">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="348">
-              <caret line="88" column="6" selection-start-line="88" selection-start-column="6" selection-end-line="88" selection-end-column="6" />
-              <folding>
-                <element signature="e#0#20#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
+        <entry file="file://$PROJECT_DIR$/android/key.properties">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
     </leaf>
@@ -173,12 +159,12 @@
       <find>tab</find>
       <find>skip</find>
       <find>anon</find>
-      <find>add</find>
-      <find>ad</find>
       <find>Khatam Qur</find>
       <find>daftar akti</find>
       <find>alquran</find>
       <find>logo</find>
+      <find>add</find>
+      <find>ad</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -187,7 +173,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/android/app/src/main/res/drawable/gradient_background.xml" />
         <option value="$PROJECT_DIR$/android/gradle.properties" />
         <option value="$PROJECT_DIR$/android/gradle/wrapper/gradle-wrapper.properties" />
         <option value="$PROJECT_DIR$/lib/ui/page_settings.dart" />
@@ -222,7 +207,6 @@
         <option value="$PROJECT_DIR$/lib/service/cloudmessaging.dart" />
         <option value="$PROJECT_DIR$/lib/service/firebasemessaging.dart" />
         <option value="$PROJECT_DIR$/android/app/src/main/res/values/colors.xml" />
-        <option value="$PROJECT_DIR$/android/app/src/main/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/lib/ui/home_page.dart" />
         <option value="$PROJECT_DIR$/lib/main.dart" />
         <option value="$PROJECT_DIR$/lib/quran/screens/quran_aya_screen.dart" />
@@ -231,20 +215,22 @@
         <option value="$PROJECT_DIR$/lib/ui/page_addlist.dart" />
         <option value="$PROJECT_DIR$/lib/ui/page_detail.dart" />
         <option value="$PROJECT_DIR$/lib/service/authentication.dart" />
-        <option value="$PROJECT_DIR$/pubspec.yaml" />
         <option value="$PROJECT_DIR$/lib/ui/page_task.dart" />
         <option value="$PROJECT_DIR$/lib/quran/background/background.dart" />
         <option value="$PROJECT_DIR$/lib/ui/page_done.dart" />
         <option value="$PROJECT_DIR$/lib/quran/screens/quran_screen.dart" />
         <option value="$PROJECT_DIR$/lib/ui/page_login_signup.dart" />
+        <option value="$PROJECT_DIR$/android/app/src/main/res/drawable/ic_icon_notif.xml" />
+        <option value="$PROJECT_DIR$/android/app/src/main/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/android/app/build.gradle" />
+        <option value="$PROJECT_DIR$/pubspec.yaml" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-8" />
-    <option name="width" value="977" />
-    <option name="height" value="1038" />
+    <option name="x" value="-9" />
+    <option name="width" value="978" />
+    <option name="height" value="1039" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -285,36 +271,37 @@
             <path>
               <item name="Khatam_Alquran" type="b2602c69:ProjectViewProjectNode" />
               <item name="Khatam_Alquran" type="462c0819:PsiDirectoryNode" />
-              <item name="android" type="462c0819:PsiDirectoryNode" />
+              <item name="build" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Khatam_Alquran" type="b2602c69:ProjectViewProjectNode" />
               <item name="Khatam_Alquran" type="462c0819:PsiDirectoryNode" />
-              <item name="android" type="462c0819:PsiDirectoryNode" />
+              <item name="build" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Khatam_Alquran" type="b2602c69:ProjectViewProjectNode" />
               <item name="Khatam_Alquran" type="462c0819:PsiDirectoryNode" />
-              <item name="lib" type="462c0819:PsiDirectoryNode" />
+              <item name="build" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="outputs" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Khatam_Alquran" type="b2602c69:ProjectViewProjectNode" />
               <item name="Khatam_Alquran" type="462c0819:PsiDirectoryNode" />
-              <item name="lib" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
+              <item name="build" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="outputs" type="462c0819:PsiDirectoryNode" />
+              <item name="apk" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Khatam_Alquran" type="b2602c69:ProjectViewProjectNode" />
               <item name="Khatam_Alquran" type="462c0819:PsiDirectoryNode" />
-              <item name="lib" type="462c0819:PsiDirectoryNode" />
-              <item name="ui" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Khatam_Alquran" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Khatam_Alquran" type="462c0819:PsiDirectoryNode" />
-              <item name="lib" type="462c0819:PsiDirectoryNode" />
-              <item name="utils" type="462c0819:PsiDirectoryNode" />
+              <item name="build" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="outputs" type="462c0819:PsiDirectoryNode" />
+              <item name="apk" type="462c0819:PsiDirectoryNode" />
+              <item name="release" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -339,8 +326,8 @@
       <recent name="D:\Android Projects\Taskist" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\Android Projects\Khatam_Alquran\assets\images" />
       <recent name="D:\Android Projects\Khatam_Alquran\android\app" />
+      <recent name="D:\Android Projects\Khatam_Alquran\assets\images" />
       <recent name="D:\Android Projects\Khatam_Alquran\android" />
       <recent name="D:\Android Projects\Taskist\android\app" />
       <recent name="D:\Android Projects\Taskist\assets" />
@@ -680,7 +667,21 @@
       <option name="project" value="LOCAL" />
       <updated>1557152762485</updated>
     </task>
-    <option name="localTasksCounter" value="40" />
+    <task id="LOCAL-00040" summary="Add privacy policy">
+      <created>1557159134666</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1557159134666</updated>
+    </task>
+    <task id="LOCAL-00041" summary="change color of icon notif">
+      <created>1557159488734</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1557159488734</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="TodoView">
@@ -694,9 +695,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23020135" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.23020135" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="3" />
@@ -714,8 +714,8 @@
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3286119" />
       <window_info anchor="bottom" x="395" y="296" width="745" height="231" id="Event Log" order="7" sideWeight="0.50067115" side_tool="true" type="WINDOWED" weight="0.32765958" />
       <window_info anchor="bottom" id="Dart Analysis" order="8" sideWeight="0.4966443" weight="0.32719547" />
-      <window_info anchor="bottom" id="Version Control" order="9" sideWeight="0.49932885" visible="true" weight="0.5127479" />
-      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49932885" weight="0.32152975" />
+      <window_info anchor="bottom" id="Version Control" order="9" sideWeight="0.49932885" weight="0.5127479" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" sideWeight="0.49932885" visible="true" weight="0.32152975" />
       <window_info anchor="bottom" x="23" y="296" width="1490" height="231" id="Messages" order="11" sideWeight="0.49932885" weight="0.26062322" />
       <window_info anchor="bottom" id="Flutter Performance" order="12" side_tool="true" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
@@ -772,8 +772,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Change color of aya screen" />
-    <MESSAGE value="change color of setting dialog" />
     <MESSAGE value="refine add task page" />
     <MESSAGE value="refine detail task page" />
     <MESSAGE value="configure android build" />
@@ -797,16 +795,11 @@
     <MESSAGE value="Fix tab view error in quran page" />
     <MESSAGE value="Add google sign in method" />
     <MESSAGE value="Add google sign in method but revert from correct project" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add google sign in method but revert from correct project" />
+    <MESSAGE value="Add privacy policy" />
+    <MESSAGE value="change color of icon notif" />
+    <option name="LAST_COMMIT_MESSAGE" value="change color of icon notif" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://D:/flutter/packages/flutter/lib/src/widgets/overlay.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="143">
-          <caret line="300" column="4" selection-start-line="300" selection-start-column="4" selection-end-line="300" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://D:/flutter/packages/flutter/lib/src/widgets/framework.dart">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="143">
@@ -846,9 +839,6 @@
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/service/cloudmessaging.dart" />
-    <entry file="file://$PROJECT_DIR$/android/app/src/main/res/drawable/ic_icon_notif.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/android/app/src/main/res/mipmap-hdpi/ic_launcher.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
@@ -1054,20 +1044,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/android/app/src/main/AndroidManifest.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="101">
-          <caret line="46" column="69" selection-start-line="46" selection-start-column="69" selection-end-line="46" selection-end-column="69" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pubspec.yaml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="12" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lib/quran/background/background.dart">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="208">
@@ -1118,10 +1094,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/android/app/src/main/res/drawable/ic_icon_notif.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="186">
+          <caret line="49" column="57" selection-start-line="49" selection-start-column="49" selection-end-line="49" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/android/app/src/main/AndroidManifest.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="141">
+          <caret line="25" selection-start-line="25" selection-end-line="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/android/key.properties">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/android/app/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="46" column="33" selection-start-line="46" selection-start-column="33" selection-end-line="46" selection-end-column="33" />
+        <state relative-caret-position="133">
+          <caret line="48" column="31" selection-start-line="48" selection-start-column="31" selection-end-line="48" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pubspec.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="17" selection-start-line="3" selection-start-column="17" selection-end-line="3" selection-end-column="17" />
         </state>
       </provider>
     </entry>
