@@ -1,14 +1,19 @@
 import 'package:flutter/material.dart';
-import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
+import 'package:flutter_slidable/flutter_slidable.dart';
+import 'package:intl/intl.dart' as intl;
 import 'package:khatam_quran/quran/helpers/colors_settings.dart';
+import 'package:khatam_quran/quran/helpers/settings_helpers.dart';
 import 'package:khatam_quran/quran/helpers/shimmer_helpers.dart';
 import 'package:khatam_quran/quran/localizations/app_localizations.dart';
 import 'package:khatam_quran/quran/main.dart';
 import 'package:khatam_quran/quran/models/bookmarks_model.dart';
+import 'package:khatam_quran/quran/models/chapters_models.dart';
+import 'package:khatam_quran/quran/models/quran_data_model.dart';
+import 'package:khatam_quran/quran/screens/quran_aya_screen.dart';
 import 'package:khatam_quran/quran/services/bookmarks_data_service.dart';
+import 'package:khatam_quran/quran/services/quran_data_services.dart';
+import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:scoped_model/scoped_model.dart';
-import 'package:intl/intl.dart' as intl;
-import 'package:flutter_slidable/flutter_slidable.dart';
 
 class QuranBookmarksScreen extends StatefulWidget {
   @override
@@ -97,12 +102,24 @@ class _QuranBookmarksScreenState extends State<QuranBookmarksScreen> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: <Widget>[
-                  Text(
-                    '${bookmarksModel.suraName} ${bookmarksModel.sura}:${bookmarksModel.aya}',
-                    style: TextStyle(
-                      fontSize: 18,
+                  InkWell(
+                    child: Text(
+                      '${bookmarksModel.suraName} ${bookmarksModel
+                          .sura}:${bookmarksModel.aya}',
+                      style: TextStyle(
+                        fontSize: 18,
+                      ),
                     ),
-                  ),
+                    onTap: () async {
+                      Navigator.of(context).push(MaterialPageRoute(
+                        builder: (BuildContext context) {
+                          return QuranAyaScreen(
+                            chapter: quranBookmarksScreenModel.getChapterFromBookmark(bookmarksModel),
+                          );
+                        },
+                      ));
+                    },
+                  )
                 ],
               ),
             ),
@@ -194,7 +211,8 @@ class _QuranBookmarksScreenState extends State<QuranBookmarksScreen> {
 
 class QuranBookmarksScreenModel extends Model {
   IBookmarksDataService bookmarksDataService;
-
+  QuranDataService _quranDataService = QuranDataService.instance;
+  Map<Chapter, List<Aya>> chapters = {};
   List<BookmarksModel> listBookmarks = [];
 
   bool isGettingBookmarks = true;
@@ -211,6 +229,13 @@ class QuranBookmarksScreenModel extends Model {
       isGettingBookmarks = true;
       notifyListeners();
 
+      var locale = SettingsHelpers.instance.getLocale();
+      _quranDataService.getChaptersNavigator(locale).then(
+            (v) {
+          chapters = v;
+        },
+      );
+
       await bookmarksDataService.init();
       listBookmarks = await bookmarksDataService.getListBookmarks();
       notifyListeners();
@@ -218,6 +243,12 @@ class QuranBookmarksScreenModel extends Model {
       isGettingBookmarks = false;
       notifyListeners();
     }
+  }
+
+  Chapter getChapterFromBookmark(BookmarksModel bookmarkModel){
+    return chapters.keys.firstWhere((chapter){
+      return chapter.chapterNumber == bookmarkModel.sura;
+    });
   }
 
   Future deleteBookmarks(int bookmarksModelId) async {
