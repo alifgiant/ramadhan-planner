@@ -5,10 +5,6 @@
 Let's be better Muslim by reading the Quran everyday. with Khatam Quran, you will be guided to follow 30 Days Tadarus schedule and in no time you will have finish reading the Quran.
 </h2>
 
-<h2 align="center">
- The app is using Firebase, you have to configure it from your side to test the app
-</h2>
-
 <h3 align="center">
  Download it on Android now: <a href="https://play.google.com/store/apps/details?id=com.rsa.khatam_quran">
       Khatam Quran on Android
